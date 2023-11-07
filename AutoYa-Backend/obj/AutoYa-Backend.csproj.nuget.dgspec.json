@@ -10,11 +10,11 @@
         "projectUniqueName": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
         "projectName": "AutoYa-Backend",
         "projectPath": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
-        "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
         "outputPath": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
