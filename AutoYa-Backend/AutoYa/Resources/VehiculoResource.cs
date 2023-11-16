@@ -16,9 +16,9 @@ public class VehiculoResource
     public int CostoAlquiler { get; set; } // Este no es el costo total del alquiler
     public string LugarRecojo { get; set; }
     public string UrlImagen { get; set; }
-    public byte[] ContratoAlquilerPdf { get; set; }
-
+    public string? ContratoAlquilerPdf { get; set; }
+    public string EstadoRenta { get; set; }
     public PropietarioResource Propietario { get; set; }
-    public ArrendatarioResource Arrendatario { get; set; }
-    public AlquilerResource Alquiler { get; set; }
+    public ArrendatarioResource? Arrendatario { get; set; }
+    public AlquilerResource? Alquiler { get; set; }
 }

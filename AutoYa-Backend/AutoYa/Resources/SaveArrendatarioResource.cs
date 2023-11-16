@@ -7,5 +7,6 @@ public class SaveArrendatarioResource
     public DateTime FechaNacimiento { get; set; }
     public int Telefono { get; set; }
     public string Correo { get; set; }
-    public byte[] AntecedentesPenalesPdf { get; set; }
+    public string? AntecedentesPenalesPdf { get; set; } //cambiar el string a IFormFile
+    public string Contrasenia { get; set; }
 }

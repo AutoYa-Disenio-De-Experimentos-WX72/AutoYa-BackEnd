@@ -2,6 +2,7 @@
 using AutoYa_Backend.AutoYa.Domain.Models;
 using AutoYa_Backend.AutoYa.Domain.Services;
 using AutoYa_Backend.AutoYa.Resources;
+using AutoYa_Backend.Shared.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AutoYa_Backend.AutoYa.Controllers;
@@ -27,4 +28,53 @@ public class PropietariosController : ControllerBase
         
         return resources;
     }
+    
+    [HttpPost]
+    public async Task<IActionResult> PostAsync([FromBody] SavePropietarioResource resource)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState.GetErrorMessages());
+    
+        var propietario = _mapper.Map<SavePropietarioResource, Propietario>(resource);
+    
+        var result = await _propietarioService.SaveAsync(propietario);
+    
+        if (!result.Success)
+            return BadRequest(result.Message);
+    
+        var propietarioResource = _mapper.Map<Propietario, PropietarioResource>(result.Resource);
+    
+        return Ok(propietarioResource);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> PutAsync(int id, [FromBody] SavePropietarioResource resource)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState.GetErrorMessages());
+    
+        var propietario = _mapper.Map<SavePropietarioResource, Propietario>(resource);
+        var result = await _propietarioService.UpdateAsync(id, propietario);
+    
+        if (!result.Success)
+            return BadRequest(result.Message);
+    
+        var propietarioResource = _mapper.Map<Propietario, PropietarioResource>(result.Resource);
+    
+        return Ok(propietarioResource);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteAsync(int id)
+    {
+        var result = await _propietarioService.DeleteAsync(id);
+    
+        if (!result.Success)
+            return BadRequest(result.Message);
+    
+        var propietarioResource = _mapper.Map<Propietario, PropietarioResource>(result.Resource);
+    
+        return Ok(propietarioResource);
+    }
+
 }

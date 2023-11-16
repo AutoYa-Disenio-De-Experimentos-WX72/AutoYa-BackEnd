@@ -8,6 +8,7 @@ public class Propietario
     public DateTime FechaNacimiento { get; set; }
     public int Telefono { get; set; }
     public string Correo { get; set; }
+    public string Contrasenia { get; set; }
 
     // Relaciones
     // Un propietario puede tener uno o más vehículos

@@ -22,7 +22,7 @@ public class AlquilerRepository : BaseRepository, IAlquilerRepository
         await _context.Alquileres.AddAsync(alquiler);
     }
 
-    public async Task<Alquiler> FindByIdAsync(int alquilerId)
+    public async Task<Alquiler> FindByIdAsync(int? alquilerId)
     {
         return await _context.Alquileres.FindAsync(alquilerId);
     }

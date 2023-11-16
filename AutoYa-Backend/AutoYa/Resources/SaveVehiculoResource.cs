@@ -15,8 +15,9 @@ public class SaveVehiculoResource
     public int CostoAlquiler { get; set; }
     public string LugarRecojo { get; set; }
     public string UrlImagen { get; set; }
-    public byte[] ContratoAlquilerPdf { get; set; }
+    public string? ContratoAlquilerPdf { get; set; }
+    public string EstadoRenta { get; set; }
     public int PropietarioId { get; set; }
-    public int ArrendatarioId { get; set; }
-    public int AlquilerId { get; set; }
+    public int? ArrendatarioId { get; set; }
+    public int? AlquilerId { get; set; }
 }

@@ -22,9 +22,14 @@ public class ArrendatarioRepository : BaseRepository, IArrendatarioRepository
         await _context.Arrendatarios.AddAsync(arrendatario);
     }
 
-    public async Task<Arrendatario> FindByIdAsync(int arrendatarioId)
+    public async Task<Arrendatario> FindByIdAsync(int? arrendatarioId)
     {
         return await _context.Arrendatarios.FindAsync(arrendatarioId);
+    }
+
+    public async Task<Arrendatario> FindByEmailAsync(string email)
+    {
+        return await _context.Arrendatarios.FirstOrDefaultAsync(a => a.Correo == email);
     }
 
     public void Update(Arrendatario arrendatario)

@@ -16,17 +16,18 @@ public class Vehiculo
     public int CostoAlquiler { get; set; } // Este no es el costo total del alquiler
     public string LugarRecojo { get; set; }
     public string UrlImagen { get; set; }
-    public byte[] ContratoAlquilerPdf { get; set; }
+    public string? ContratoAlquilerPdf { get; set; }
+    public string EstadoRenta { get; set; }
 
     // Relaciones
     // Un vehículo pertenece a solo un propietario
     public int PropietarioId { get; set; } // Foreign key
     public Propietario Propietario { get; set; }
 
-    public int ArrendatarioId { get; set; } // Foreign key
+    public int? ArrendatarioId { get; set; } // Foreign key
     public Arrendatario Arrendatario { get; set; }
     
-    public int AlquilerId { get; set; } //fk
+    public int? AlquilerId { get; set; } //fk
     public Alquiler Alquiler { get; set; }
 
 }

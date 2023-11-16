@@ -8,4 +8,5 @@ public class PropietarioResource
     public DateTime FechaNacimiento { get; set; }
     public int Telefono { get; set; }
     public string Correo { get; set; }
+    public string Contrasenia { get; set; }
 }

@@ -14,6 +14,9 @@ public class ModelToResourceProfile : Profile
         CreateMap<Notificacion, NotificacionResource>();
         CreateMap<Propietario, PropietarioResource>();
         CreateMap<Solicitud, SolicitudResource>();
-        CreateMap<Vehiculo, VehiculoResource>();
+        CreateMap<Vehiculo, VehiculoResource>()
+            .ForMember(dest => dest.Propietario, opt => opt.MapFrom(src => src.Propietario))
+            .ForMember(dest => dest.Arrendatario, opt => opt.MapFrom(src => src.Arrendatario))
+            .ForMember(dest => dest.Alquiler, opt => opt.MapFrom(src => src.Alquiler));
     }
 }

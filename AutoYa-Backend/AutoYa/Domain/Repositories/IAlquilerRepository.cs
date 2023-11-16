@@ -6,7 +6,7 @@ public interface IAlquilerRepository
 {
     Task<IEnumerable<Alquiler>> ListAsync();
     Task AddAsync(Alquiler alquiler);
-    Task<Alquiler> FindByIdAsync(int alquilerId);
+    Task<Alquiler> FindByIdAsync(int? alquilerId);
     void Update(Alquiler alquiler);
     void Remove(Alquiler alquiler);
     Task<IEnumerable<Alquiler>> FindByVehiculoIdAsync(int vehiculoId);

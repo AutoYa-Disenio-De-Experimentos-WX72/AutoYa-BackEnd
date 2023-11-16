@@ -26,6 +26,13 @@ public class ArrendatarioService : IArrendatarioService
         {
             try
             {
+                var existingArrendatario = await _arrendatarioRepository.FindByEmailAsync(arrendatario.Correo);
+
+                if (existingArrendatario != null)
+                {
+                    return new ArrendatarioResponse($"Ya existe un arrendatario registrado con el correo electrónico {arrendatario.Correo}.");
+                }
+                
                 await _arrendatarioRepository.AddAsync(arrendatario);
                 await _unitOfWork.CompleteAsync();
                 return new ArrendatarioResponse(arrendatario);
@@ -38,16 +45,25 @@ public class ArrendatarioService : IArrendatarioService
 
         public async Task<ArrendatarioResponse> UpdateAsync(int id, Arrendatario arrendatario)
         {
+            // Buscar el arrendatario existente por ID
             var existingArrendatario = await _arrendatarioRepository.FindByIdAsync(id);
             if (existingArrendatario == null)
                 return new ArrendatarioResponse("Arrendatario not found.");
-
+            
+            // Verificar si el nuevo correo electrónico ya existe en la base de datos
+            var arrendatarioByEmail = await _arrendatarioRepository.FindByEmailAsync(arrendatario.Correo);
+            if (arrendatarioByEmail != null && arrendatarioByEmail.Id != id)
+            {
+                return new ArrendatarioResponse("Ya existe un arrendatario con este correo electrónico.");
+            }
+            
             existingArrendatario.Nombres = arrendatario.Nombres;
             existingArrendatario.Apellidos = arrendatario.Apellidos;
             existingArrendatario.FechaNacimiento = arrendatario.FechaNacimiento;
             existingArrendatario.Telefono = arrendatario.Telefono;
             existingArrendatario.Correo = arrendatario.Correo;
             existingArrendatario.AntecedentesPenalesPdf = arrendatario.AntecedentesPenalesPdf;
+            existingArrendatario.Contrasenia = arrendatario.Contrasenia;
 
             try
             {

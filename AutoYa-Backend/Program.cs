@@ -1,3 +1,12 @@
+using AutoYa_Backend.AutoYa.Domain.Repositories;
+using AutoYa_Backend.AutoYa.Domain.Services;
+using AutoYa_Backend.AutoYa.Mapping;
+using AutoYa_Backend.AutoYa.Persistence.Repositories;
+using AutoYa_Backend.AutoYa.Services;
+using AutoYa_Backend.Shared.Persistence.Contexts;
+using AutoYa_Backend.Shared.Persistence.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +16,53 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add Database Connection
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseMySQL(connectionString)
+        .LogTo(Console.WriteLine, LogLevel.Information)
+        .EnableSensitiveDataLogging()
+        .EnableDetailedErrors());
+
+// Add lowercase routes
+
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
+// Dependency Injection Configuration
+
+builder.Services.AddScoped<IAlquilerRepository, AlquilerRepository>();
+builder.Services.AddScoped<IAlquilerService, AlquilerService>();
+builder.Services.AddScoped<IArrendatarioRepository, ArrendatarioRepository>();
+builder.Services.AddScoped<IArrendatarioService, ArrendatarioService>();
+builder.Services.AddScoped<IMantenimientoRepository, MantenimientoRepository>();
+builder.Services.AddScoped<IMantenimientoService, MantenimientoService>();
+builder.Services.AddScoped<INotificacionRepository, NotificacionRepository>();
+builder.Services.AddScoped<INotificacionService, NotificacionService>();
+builder.Services.AddScoped<IPropietarioRepository, PropietarioRepository>();
+builder.Services.AddScoped<IPropietarioService, PropietarioService>();
+builder.Services.AddScoped<ISolicitudRepository, SolicitudRepository>();
+builder.Services.AddScoped<ISolicitudService, SolicitudService>();
+builder.Services.AddScoped<IVehiculoRepository, VehiculoReposiroty>();
+builder.Services.AddScoped<IVehiculoService, VehiculoService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// AutoMapper Configuration
+
+builder.Services.AddAutoMapper(
+    typeof(ModelToResourceProfile),
+    typeof(ResourceToModelProfile));
+
 var app = builder.Build();
+
+// Validation for ensuring Database Objects are created
+
+using (var scope = app.Services.CreateScope())
+using (var context = scope.ServiceProvider.GetService<AppDbContext>())
+{
+    context.Database.EnsureCreated();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

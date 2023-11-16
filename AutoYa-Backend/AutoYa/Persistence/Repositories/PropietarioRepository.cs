@@ -36,4 +36,9 @@ public class PropietarioRepository : BaseRepository, IPropietarioRepository
     {
         _context.Propietarios.Remove(propietario);
     }
+
+    public async Task<Propietario> FindByEmailAsync(string email)
+    {
+        return await _context.Propietarios.FirstOrDefaultAsync(a => a.Correo == email);
+    }
 }
