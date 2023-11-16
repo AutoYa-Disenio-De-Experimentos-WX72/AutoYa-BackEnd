@@ -14,7 +14,7 @@ public class VehiculoReposiroty : BaseRepository, IVehiculoRepository
 
     public async Task<IEnumerable<Vehiculo>> ListAsync()
     {
-        return await _context.Vehiculos.ToListAsync();
+        return await _context.Vehiculos.Include(v => v.Propietario).ToListAsync();
     }
 
     public async Task AddAsync(Vehiculo vehiculo)

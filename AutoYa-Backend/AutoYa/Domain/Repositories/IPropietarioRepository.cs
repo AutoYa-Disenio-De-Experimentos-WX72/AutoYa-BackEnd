@@ -9,4 +9,5 @@ public interface IPropietarioRepository
     Task<Propietario> FindByIdAsync(int propietarioId);
     void Update(Propietario propietario);
     void Remove(Propietario propietario);
+    Task<Propietario> FindByEmailAsync(string email);
 }

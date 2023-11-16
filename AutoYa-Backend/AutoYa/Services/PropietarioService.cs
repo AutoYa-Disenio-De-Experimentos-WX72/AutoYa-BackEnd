@@ -26,6 +26,13 @@ public class PropietarioService : IPropietarioService
         {
             try
             {
+                var existingArrendatario = await _propietarioRepository.FindByEmailAsync(propietario.Correo);
+
+                if (existingArrendatario != null)
+                {
+                    return new PropietarioResponse($"Ya existe un propietario registrado con el correo electrónico {propietario.Correo}.");
+                }
+                
                 await _propietarioRepository.AddAsync(propietario);
                 await _unitOfWork.CompleteAsync();
                 return new PropietarioResponse(propietario);
@@ -38,15 +45,25 @@ public class PropietarioService : IPropietarioService
 
         public async Task<PropietarioResponse> UpdateAsync(int id, Propietario propietario)
         {
+            // Buscar el propietario existente por ID
             var existingPropietario = await _propietarioRepository.FindByIdAsync(id);
+            
             if (existingPropietario == null)
                 return new PropietarioResponse("Propietario not found.");
 
+            // Verificar si el nuevo correo electrónico ya existe en la base de datos
+            var propietarioByEmail = await _propietarioRepository.FindByEmailAsync(propietario.Correo);
+            if (propietarioByEmail != null && propietarioByEmail.Id != id)
+            {
+                return new PropietarioResponse("Ya existe un propietario con este correo electrónico.");
+            }
+            
             existingPropietario.Nombres = propietario.Nombres;
             existingPropietario.Apellidos = propietario.Apellidos;
             existingPropietario.FechaNacimiento = propietario.FechaNacimiento;
             existingPropietario.Telefono = propietario.Telefono;
             existingPropietario.Correo = propietario.Correo;
+            existingPropietario.Contrasenia = propietario.Contrasenia;
 
             try
             {

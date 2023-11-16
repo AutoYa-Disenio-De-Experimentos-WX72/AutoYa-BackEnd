@@ -9,11 +9,19 @@ namespace AutoYa_Backend.AutoYa.Services;
 public class AlquilerService : IAlquilerService
 {
     private readonly IAlquilerRepository _alquilerRepository;
+    private readonly IVehiculoRepository _vehiculoRepository;
+    private readonly IPropietarioRepository _propietarioRepository;
+    private readonly IArrendatarioRepository _arrendatarioRepository;
+    private readonly ISolicitudRepository _solicitudRepository;
     private readonly IUnitOfWork _unitOfWork;
-
-        public AlquilerService(IAlquilerRepository alquilerRepository, IUnitOfWork unitOfWork)
+    
+    public AlquilerService(IAlquilerRepository alquilerRepository, IVehiculoRepository vehiculoRepository, IPropietarioRepository propietarioRepository, IArrendatarioRepository arrendatarioRepository, ISolicitudRepository solicitudRepository, IUnitOfWork unitOfWork)
         {
             _alquilerRepository = alquilerRepository;
+            _vehiculoRepository = vehiculoRepository;
+            _propietarioRepository = propietarioRepository;
+            _arrendatarioRepository = arrendatarioRepository;
+            _solicitudRepository = solicitudRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -46,6 +54,12 @@ public class AlquilerService : IAlquilerService
         {
             try
             {
+                // Asignar las entidades relacionadas
+                alquiler.Vehiculo = await _vehiculoRepository.FindByIdAsync(alquiler.VehiculoId);
+                alquiler.Propietario = await _propietarioRepository.FindByIdAsync(alquiler.PropietarioId);
+                alquiler.Arrendatario = await _arrendatarioRepository.FindByIdAsync(alquiler.ArrendatarioId);
+                alquiler.Solicitud = await _solicitudRepository.FindByIdAsync(alquiler.SolicitudId);
+                
                 await _alquilerRepository.AddAsync(alquiler);
                 await _unitOfWork.CompleteAsync();
                 return new AlquilerResponse(alquiler);

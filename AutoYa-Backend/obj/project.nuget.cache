@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7pWOYgwlu5QTsaSfhCX4Q6khKjLORNwa8JZHcwSRfGjKmhkzPRP1xFsDJdWj5ojIgon/nNKce6DsuSi6/z2QAQ==",
+  "dgSpecHash": "+/QYfPKLNkIFL8kxkZAC5GghtHj4cqnqFiSTiQHD/sJUlhCeW9DB5VbLw4WfThb8Yeomk/u7vHK/TdZPi2+oaw==",
   "success": true,
   "projectFilePath": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.5\\k4os.compression.lz4.streams.1.3.5.nupkg.sha512",
