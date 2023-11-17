@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {}
+    "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {}
   },
   "projects": {
-    "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {
+    "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "projectUniqueName": "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
         "projectName": "AutoYa-Backend",
-        "projectPath": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\obj\\",
+        "projectPath": "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "packagesPath": "C:\\Users\\TheRivex1907\\.nuget\\packages\\",
+        "outputPath": "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\TheRivex1907\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,10 +41,6 @@
           "targetAlias": "net7.0",
           "dependencies": {
             "AutoMapper": {
-              "target": "Package",
-              "version": "[12.0.1, )"
-            },
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
             },
@@ -90,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
