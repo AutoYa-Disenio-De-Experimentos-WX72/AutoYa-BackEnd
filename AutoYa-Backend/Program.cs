@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using AutoYa_Backend.AutoYa.Domain.Repositories;
 using AutoYa_Backend.AutoYa.Domain.Services;
 using AutoYa_Backend.AutoYa.Mapping;
