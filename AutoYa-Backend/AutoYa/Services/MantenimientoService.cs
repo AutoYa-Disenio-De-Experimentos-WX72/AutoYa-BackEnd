@@ -59,6 +59,9 @@ public class MantenimientoService : IMantenimientoService
 
             try
             {
+                existingMantenimiento.ArrendatarioId = mantenimiento.ArrendatarioId;
+                existingMantenimiento.PropietarioId = mantenimiento.PropietarioId;
+                
                 _mantenimientoRepository.Update(existingMantenimiento);
                 await _unitOfWork.CompleteAsync();
                 return new MantenimientoResponse(existingMantenimiento);
