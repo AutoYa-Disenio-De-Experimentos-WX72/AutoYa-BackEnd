@@ -5,6 +5,6 @@ public class NotificacionResource
     public int Id { get; set; }
     public string Body { get; set; }
     
-    public ArrendatarioResource Arrendatario { get; set; }
-    public PropietarioResource Propietario { get; set; }
+    public int PropietarioId { get; set; }
+    public int ArrendatarioId { get; set; }
 }

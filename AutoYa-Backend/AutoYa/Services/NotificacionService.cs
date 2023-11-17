@@ -56,6 +56,9 @@ public class NotificacionService : INotificacionService
 
             try
             {
+                existingNotificacion.ArrendatarioId = notificacion.ArrendatarioId;
+                existingNotificacion.PropietarioId = notificacion.PropietarioId;
+                
                 _notificacionRepository.Update(existingNotificacion);
                 await _unitOfWork.CompleteAsync();
                 return new NotificacionResponse(existingNotificacion);

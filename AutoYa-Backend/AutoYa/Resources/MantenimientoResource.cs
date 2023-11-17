@@ -8,6 +8,6 @@ public class MantenimientoResource
     public string Descripcion { get; set; }
     public string UrlImagen { get; set; }
     
-    public ArrendatarioResource Arrendatario { get; set; }
-    public PropietarioResource Propietario { get; set; }
+    public int ArrendatarioId { get; set; }
+    public int PropietarioId { get; set; }
 }
