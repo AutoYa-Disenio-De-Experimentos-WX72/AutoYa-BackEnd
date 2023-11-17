@@ -138,3 +138,13 @@ A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backen
 A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\obj\Debug\net7.0\AutoYa-Backend.pdb
 A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\obj\Debug\net7.0\AutoYa-Backend.genruntimeconfig.cache
 A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\obj\Debug\net7.0\ref\AutoYa-Backend.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\BCrypt.Net-Next.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
+A:\TheRivex1907\Documents\Universidad\Sexto ciclo\Aplicaciones Web\AutoYa-Backend\AutoYa-Backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
