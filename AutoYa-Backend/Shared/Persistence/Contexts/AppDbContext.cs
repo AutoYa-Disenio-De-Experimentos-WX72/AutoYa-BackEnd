@@ -1,4 +1,5 @@
 ﻿using AutoYa_Backend.AutoYa.Domain.Models;
+using AutoYa_Backend.Security.Domain.Models;
 using AutoYa_Backend.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,8 @@ public class AppDbContext : DbContext
     public DbSet<Propietario> Propietarios { get; set; }
     public DbSet<Solicitud> Solicitudes { get; set; }
     public DbSet<Vehiculo> Vehiculos { get; set; }
+    
+    public DbSet<User> Users { get; set; }
     
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -126,6 +129,16 @@ public class AppDbContext : DbContext
             .HasForeignKey<Vehiculo>(v => v.AlquilerId)
             .IsRequired(false); // Hacerlo opcional si no todos los vehículos están alquilados
     
+        // Constraints
+        builder.Entity<User>().ToTable("Users");
+        builder.Entity<User>().HasKey(p => p.Id);
+        builder.Entity<User>().Property(p => 
+            p.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<User>().Property(p => 
+            p.Email).IsRequired().HasMaxLength(30);
+        builder.Entity<User>().Property(p => p.FirstName).IsRequired();
+        builder.Entity<User>().Property(p => p.LastName).IsRequired();
+        
     builder.UseSnakeCaseNamingConvention();
     }
 }
