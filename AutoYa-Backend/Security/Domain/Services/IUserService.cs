@@ -11,4 +11,5 @@ public interface IUserService
     Task RegisterAsync(RegisterRequest model);
     Task UpdateAsync(int id, UpdateRequest model);
     Task DeleteAsync(int id);
+
 }

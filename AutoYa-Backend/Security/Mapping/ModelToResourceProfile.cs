@@ -7,7 +7,7 @@ namespace AutoYa_Backend.Security.Mapping;
 
 public class ModelToResourceProfile : Profile
 {
-    public ModelToResourceProfile()
+    protected ModelToResourceProfile()
     {
         CreateMap<User, AuthenticateResponse>();
         CreateMap<User, UserResource>();
