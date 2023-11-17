@@ -19,6 +19,5 @@ public class Alquiler
     public int ArrendatarioId { get; set; } //fk
     public Arrendatario Arrendatario { get; set; }
     
-    public int SolicitudId { get; set; } //fk
-    public Solicitud Solicitud { get; set; }
+    public List<Solicitud> Solicitudes { get; set; }
 }

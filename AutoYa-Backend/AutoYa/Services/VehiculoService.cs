@@ -10,14 +10,16 @@ public class VehiculoService : IVehiculoService
 {
     private readonly IVehiculoRepository _vehiculoRepository;
     private readonly IPropietarioRepository _propietarioRepository;
+    private readonly IArrendatarioRepository _arrendatarioRepository;
     private readonly IAlquilerRepository _alquilerRepository;
     private readonly IUnitOfWork _unitOfWork;
 
-    public VehiculoService(IVehiculoRepository vehiculoRepository, IPropietarioRepository propietarioRepository, IUnitOfWork unitOfWork, IAlquilerRepository alquilerRepository)
+    public VehiculoService(IVehiculoRepository vehiculoRepository, IPropietarioRepository propietarioRepository, IUnitOfWork unitOfWork, IAlquilerRepository alquilerRepository, IArrendatarioRepository arrendatarioRepository)
     {
         _vehiculoRepository = vehiculoRepository;
         _propietarioRepository = propietarioRepository;
         _alquilerRepository = alquilerRepository;
+        _arrendatarioRepository = arrendatarioRepository;
         _unitOfWork = unitOfWork;
     }
 
@@ -47,7 +49,6 @@ public class VehiculoService : IVehiculoService
         {
             // Asignar las entidades relacionadas
             vehiculo.Propietario = await _propietarioRepository.FindByIdAsync(vehiculo.PropietarioId);
-            vehiculo.Alquiler = await _alquilerRepository.FindByIdAsync(vehiculo.AlquilerId);
             
             await _vehiculoRepository.AddAsync(vehiculo);
             await _unitOfWork.CompleteAsync();
@@ -64,26 +65,32 @@ public class VehiculoService : IVehiculoService
         var existingVehiculo = await _vehiculoRepository.FindByIdAsync(vehiculoId);
         if (existingVehiculo == null)
             return new VehiculoResponse("Vehiculo not found.");
-
-        // Actualiza las propiedades del vehículo con los valores del objeto vehiculo
-        existingVehiculo.Marca = vehiculo.Marca;
-        existingVehiculo.Modelo = vehiculo.Modelo;
-        existingVehiculo.VelocidadMax = vehiculo.VelocidadMax;
-        existingVehiculo.Consumo = vehiculo.Consumo;
-        existingVehiculo.Dimensiones = vehiculo.Dimensiones;
-        existingVehiculo.Peso = vehiculo.Peso;
-        existingVehiculo.Clase = vehiculo.Clase;
-        existingVehiculo.Transmision = vehiculo.Transmision;
-        existingVehiculo.Tiempo = vehiculo.Tiempo;
-        existingVehiculo.TipoTiempo = vehiculo.TipoTiempo;
-        existingVehiculo.CostoAlquiler = vehiculo.CostoAlquiler;
-        existingVehiculo.LugarRecojo = vehiculo.LugarRecojo;
-        existingVehiculo.UrlImagen = vehiculo.UrlImagen;
-        existingVehiculo.ContratoAlquilerPdf = vehiculo.ContratoAlquilerPdf;
-        existingVehiculo.EstadoRenta = vehiculo.EstadoRenta;
-
+        
+        
+        
+        // Actualiza las propiedades simples del vehículo con los valores del objeto vehiculo
+        existingVehiculo.Marca = UpdateIfValid(existingVehiculo.Marca, vehiculo.Marca);
+        existingVehiculo.Modelo = UpdateIfValid(existingVehiculo.Modelo, vehiculo.Modelo);
+        existingVehiculo.VelocidadMax = UpdateIfValid(existingVehiculo.VelocidadMax, vehiculo.VelocidadMax);
+        existingVehiculo.Consumo = UpdateIfValid(existingVehiculo.Consumo, vehiculo.Consumo);
+        existingVehiculo.Dimensiones = UpdateIfValid(existingVehiculo.Dimensiones, vehiculo.Dimensiones);
+        existingVehiculo.Peso = UpdateIfValid(existingVehiculo.Peso, vehiculo.Peso);
+        existingVehiculo.Clase = UpdateIfValid(existingVehiculo.Clase, vehiculo.Clase);
+        existingVehiculo.Transmision = UpdateIfValid(existingVehiculo.Transmision, vehiculo.Transmision);
+        existingVehiculo.Tiempo = UpdateIfValid(existingVehiculo.Tiempo, vehiculo.Tiempo);
+        existingVehiculo.TipoTiempo = UpdateIfValid(existingVehiculo.TipoTiempo, vehiculo.TipoTiempo);
+        existingVehiculo.CostoAlquiler = UpdateIfValid(existingVehiculo.CostoAlquiler, vehiculo.CostoAlquiler);
+        existingVehiculo.LugarRecojo = UpdateIfValid(existingVehiculo.LugarRecojo, vehiculo.LugarRecojo);
+        existingVehiculo.UrlImagen = UpdateIfValid(existingVehiculo.UrlImagen, vehiculo.UrlImagen);
+        existingVehiculo.ContratoAlquilerPdf = UpdateIfValid(existingVehiculo.ContratoAlquilerPdf, vehiculo.ContratoAlquilerPdf);
+        existingVehiculo.EstadoRenta = UpdateIfValid(existingVehiculo.EstadoRenta, vehiculo.EstadoRenta);
+        
         try
         {
+            // Actualiza las propiedades de navegación del vehículo existente
+            existingVehiculo.ArrendatarioId = vehiculo.ArrendatarioId;
+            existingVehiculo.AlquilerId = vehiculo.AlquilerId;
+            
             _vehiculoRepository.Update(existingVehiculo);
             await _unitOfWork.CompleteAsync();
             return new VehiculoResponse(existingVehiculo);
@@ -109,6 +116,42 @@ public class VehiculoService : IVehiculoService
         catch (Exception e)
         {
             return new VehiculoResponse($"An error occurred while deleting the vehiculo: {e.Message}");
+        }
+    }
+
+    private bool IsValidNumeric(int? value)
+    {
+        return value.HasValue && value.Value != 0;
+    }
+    
+    // Método de utilidad para actualizar si el nuevo valor es válido
+    private T UpdateIfValid<T>(T existingValue, T newValue)
+    {
+        if (IsValidForUpdate(newValue))
+        {
+            return newValue;
+        }
+
+        return existingValue;
+    }
+
+    // Método de utilidad para validar si un valor es válido para la actualización
+    private bool IsValidForUpdate<T>(T value)
+    {
+        // Si el tipo es una cadena, verifica que no sea igual a "string"
+        if (typeof(T) == typeof(string))
+        {
+            return value != null && !value.Equals("string");
+        }
+        // Si el tipo es numérico (en este caso, solo int), verifica que no sea igual a 0
+        else if (typeof(T) == typeof(int))
+        {
+            return !EqualityComparer<T>.Default.Equals(value, default(T));
+        }
+        // Otros tipos
+        else
+        {
+            return value != null && !value.Equals(default(T));
         }
     }
 }

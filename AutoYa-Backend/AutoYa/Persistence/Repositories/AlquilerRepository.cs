@@ -51,9 +51,4 @@ public class AlquilerRepository : BaseRepository, IAlquilerRepository
     {
         return await _context.Alquileres.Where(a => a.ArrendatarioId == arrendatarioId).ToListAsync();
     }
-
-    public async Task<IEnumerable<Alquiler>> FindBySolicitudIdAsync(int solicitudId)
-    {
-        return await _context.Alquileres.Where(a => a.SolicitudId == solicitudId).ToListAsync();
-    }
 }

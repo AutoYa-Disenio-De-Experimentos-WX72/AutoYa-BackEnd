@@ -12,5 +12,4 @@ public interface IAlquilerRepository
     Task<IEnumerable<Alquiler>> FindByVehiculoIdAsync(int vehiculoId);
     Task<IEnumerable<Alquiler>> FindByPropietarioIdAsync(int propietarioId);
     Task<IEnumerable<Alquiler>> FindByArrendatarioIdAsync(int arrendatarioId);
-    Task<IEnumerable<Alquiler>> FindBySolicitudIdAsync(int solicitudId);
 }
