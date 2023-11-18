@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "U1yU8QEb/yGnOcoBOtyfwjdj7sk3H9uOPYpjK4YMQYsHoX7AuZgAo9ULvELQESQX+qbMHtNd8SGUJEIvnPkQug==",
+  "dgSpecHash": "2RaJ8hYouzDZ9rCmgxEopc1LhjjOyZDxzhFpOi5TMrDuAqnaL2peYp5bmEJ2jW/xfm8Ay+K+2GRTo+dY+n4tQw==",
   "success": true,
   "projectFilePath": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
   "expectedPackageFiles": [
@@ -69,11 +69,7 @@
     "C:\\Users\\user\\.nuget\\packages\\system.text.json\\7.0.1\\system.text.json.7.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.24\\microsoft.netcore.app.ref.6.0.24.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.24\\microsoft.windowsdesktop.app.ref.6.0.24.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.24\\microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.24\\microsoft.netcore.app.host.win-x64.6.0.24.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
