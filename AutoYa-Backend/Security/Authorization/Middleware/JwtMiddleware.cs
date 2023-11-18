@@ -9,17 +9,17 @@ public class JwtMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly AppSettings _appSettings;
-
-    public JwtMiddleware(RequestDelegate next, IOptions<AppSettings> appSettings)
+    public JwtMiddleware(RequestDelegate next, IOptions<AppSettings> 
+        appSettings)
     {
         _next = next;
-        _appSettings = appSettings.Value;
+        _appSettings = appSettings.Value;;
     }
-    
-    public async Task Invoke(HttpContext context, IUserService userService, IJwtHandler handler)
+ 
+    public async Task Invoke(HttpContext context, IUserService 
+        userService, IJwtHandler handler)
     {
-        var token = 
-            context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+        var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
         var userId = handler.ValidateToken(token);
         if (userId != null)
         {
@@ -29,4 +29,5 @@ public class JwtMiddleware
         }
         await _next(context);
     }
+
 }

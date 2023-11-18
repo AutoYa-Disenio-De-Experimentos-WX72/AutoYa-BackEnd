@@ -11,8 +11,9 @@ namespace AutoYa_Backend.Security.Controllers;
 [Authorize]
 [ApiController]
 [Route("/api/v1/[controller]")]
-public class UsersController : ControllerBase
-{
+
+public class UsersController: ControllerBase
+{ 
     private readonly IUserService _userService;
     private readonly IMapper _mapper;
     public UsersController(IUserService userService, IMapper mapper)
@@ -28,7 +29,7 @@ public class UsersController : ControllerBase
         var response = await _userService.Authenticate(request);
         return Ok(response);
     }
-
+    
     [AllowAnonymous]
     [HttpPost("sign-up")]
     public async Task<IActionResult> Register(RegisterRequest request)
@@ -36,7 +37,7 @@ public class UsersController : ControllerBase
         await _userService.RegisterAsync(request);
         return Ok(new { message = "Registration successful" });
     }
-    
+
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -67,4 +68,5 @@ public class UsersController : ControllerBase
         await _userService.DeleteAsync(id);
         return Ok(new { message = "User deleted successfully" });
     }
+
 }

@@ -7,12 +7,11 @@ namespace AutoYa_Backend.Security.Authorization.Middleware;
 public class ErrorHandlerMiddleware
 {
     private readonly RequestDelegate _next;
-
     public ErrorHandlerMiddleware(RequestDelegate next)
     {
         _next = next;
     }
-    
+ 
     public async Task Invoke(HttpContext context)
     {
         try
@@ -27,11 +26,13 @@ public class ErrorHandlerMiddleware
             {
                 case AppException e:
                     // custom application error
-                    response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    response.StatusCode = 
+                        (int)HttpStatusCode.BadRequest;
                     break;
                 case KeyNotFoundException e:
                     // not found error
-                    response.StatusCode = (int)HttpStatusCode.NotFound;
+                    response.StatusCode = 
+                        (int)HttpStatusCode.NotFound;
                     break;
                 default:
                     // unhandled error

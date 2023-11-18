@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using AutoYa_Backend.Security.Domain.Models;
 using AutoYa_Backend.Security.Domain.Services.Communication;
-using Org.BouncyCastle.Asn1.X509;
 
 namespace AutoYa_Backend.Security.Mapping;
 
-public class ResourceToModelProfile : Profile
+public class ResourceToModelProfile: Profile
 {
     public ResourceToModelProfile()
     {
@@ -19,6 +18,6 @@ public class ResourceToModelProfile : Profile
                         string.IsNullOrEmpty((string)property)) return false;
                     return true;
                 }
-                ));
+            ));
     }
 }
