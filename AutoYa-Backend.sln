@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoYa-Backend", "AutoYa-Backend\AutoYa-Backend.csproj", "{214CFD5A-38F0-4C42-9F51-2E693769FF73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoYa.Test", "AutoYa.Test\AutoYa.Test.csproj", "{81BF837D-F7C5-4D3F-842C-8CCB500DD1C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{214CFD5A-38F0-4C42-9F51-2E693769FF73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{214CFD5A-38F0-4C42-9F51-2E693769FF73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{214CFD5A-38F0-4C42-9F51-2E693769FF73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81BF837D-F7C5-4D3F-842C-8CCB500DD1C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81BF837D-F7C5-4D3F-842C-8CCB500DD1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81BF837D-F7C5-4D3F-842C-8CCB500DD1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81BF837D-F7C5-4D3F-842C-8CCB500DD1C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
