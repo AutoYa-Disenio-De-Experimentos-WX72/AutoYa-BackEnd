@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
+using AutoYa_Backend.Security.Authorization.Attributes;
 using AutoYa_Backend.Security.Domain.Models;
 using AutoYa_Backend.Security.Domain.Services;
 using AutoYa_Backend.Security.Domain.Services.Communication;
 using AutoYa_Backend.Security.Resources;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AutoYa_Backend.Security.Controllers;
@@ -41,8 +41,7 @@ public class UsersController : ControllerBase
     public async Task<IActionResult> GetAll()
     {
         var users = await _userService.ListAsync();
-        var resources = _mapper.Map<IEnumerable<User>, 
-            IEnumerable<UserResource>>(users);
+        var resources = _mapper.Map<IEnumerable<User>, IEnumerable<UserResource>>(users);
         return Ok(resources);
     }
 

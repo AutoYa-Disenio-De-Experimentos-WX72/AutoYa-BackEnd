@@ -29,14 +29,12 @@ public class UserService : IUserService
 
     public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest request)
     {
-        var user = await 
-            _userRepository.FindByEmailAsync(request.Email);
+        var user = await _userRepository.FindByEmailAsync(request.Email);
         Console.WriteLine($"Request: {request.Email}, {request.Password}");
         Console.WriteLine($"User: {user.Id}, {user.FirstName}, {user.LastName}, {user.Email}, {user.PasswordHash}");
  
         // validate
-        if (user == null || !BCryptNet.Verify(request.Password, 
-                user.PasswordHash))
+        if (user == null || !BCryptNet.Verify(request.Password, user.PasswordHash))
         {
             Console.WriteLine("Authentication Error");
             throw new AppException("Username or password is incorrect");

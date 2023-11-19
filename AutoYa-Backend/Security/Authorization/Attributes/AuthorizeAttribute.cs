@@ -10,8 +10,7 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
     public void OnAuthorization(AuthorizationFilterContext context)
     {
         // If action is decorated with [AllowAnonymous] attribute
-        var allowAnonymous = 
-            context.ActionDescriptor.EndpointMetadata.OfType<AllowAnonymousAttribute>().Any();
+        var allowAnonymous = context.ActionDescriptor.EndpointMetadata.OfType<AllowAnonymousAttribute>().Any();
         // Then skip authorization process
         if (allowAnonymous)
             return;

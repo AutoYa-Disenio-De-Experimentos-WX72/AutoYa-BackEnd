@@ -82,6 +82,12 @@ builder.Services.AddDbContext<AppDbContext>(
 
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
+// Shared Injection Configuration
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+//AppSettings Configuration
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
 // Dependency Injection Configuration
 
 builder.Services.AddScoped<IAlquilerRepository, AlquilerRepository>();
@@ -99,9 +105,6 @@ builder.Services.AddScoped<ISolicitudService, SolicitudService>();
 builder.Services.AddScoped<IVehiculoRepository, VehiculoReposiroty>();
 builder.Services.AddScoped<IVehiculoService, VehiculoService>();
 
-// Shared Injection Configuration
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
 // Security Injection Configuration
 builder.Services.AddScoped<IJwtHandler, JwtHandler>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -113,9 +116,6 @@ builder.Services.AddAutoMapper(
     typeof(AutoYa_Backend.AutoYa.Mapping.ResourceToModelProfile),
     typeof(AutoYa_Backend.Security.Mapping.ModelToResourceProfile),
     typeof(AutoYa_Backend.Security.Mapping.ResourceToModelProfile));
-
-//AppSettings Configuration
-builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 var app = builder.Build();
 

@@ -51,16 +51,15 @@ public class JwtHandler : IJwtHandler
         // Execute Token validation
         try
         {
-            tokenHandler.ValidateToken(token, new 
-                TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    // Expiration with no delay
-                    ClockSkew = TimeSpan.Zero
-                }, out SecurityToken validatedToken);
+            tokenHandler.ValidateToken(token, new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                // Expiration with no delay
+                ClockSkew = TimeSpan.Zero
+            }, out SecurityToken validatedToken);
             var jwtToken = (JwtSecurityToken)validatedToken;
             var userId = int.Parse(jwtToken.Claims.First(
                 claim => claim.Type == "id").Value);
