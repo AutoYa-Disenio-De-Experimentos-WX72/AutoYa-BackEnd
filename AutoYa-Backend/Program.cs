@@ -1,4 +1,4 @@
-using System.Text;
+using System.Text.Json.Serialization;
 using AutoYa_Backend.AutoYa.Domain.Repositories;
 using AutoYa_Backend.AutoYa.Domain.Services;
 using AutoYa_Backend.AutoYa.Persistence.Repositories;
@@ -13,14 +13,14 @@ using AutoYa_Backend.Security.Persistence.Repositories;
 using AutoYa_Backend.Security.Services;
 using AutoYa_Backend.Shared.Persistence.Contexts;
 using AutoYa_Backend.Shared.Persistence.Repositories;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using crypto;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add CORS
+//Add CORS
 builder.Services.AddCors();
 
 // Add services to the container.
@@ -34,18 +34,18 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "ACME Learning Center API",
-        Description = "ACME Learning Center RESTful API",
-        TermsOfService = new Uri("https://acme-learning.com/tos"),
+        Title = "AutoYa API",
+        Description = "AutoYa RESTful API",
+        TermsOfService = new Uri("https://autoya.com/tos"),
         Contact = new OpenApiContact
         {
-            Name = "ACME.studio",
-            Url = new Uri("https://acme.studio")
+            Name = "AutoYa.studio",
+            Url = new Uri("https://autoya.studio")
         },
         License = new OpenApiLicense
         {
-            Name = "ACME Learning Center Resources License",
-            Url = new Uri("https://acme-learning.com/license")
+            Name = "AutoYa Resources License",
+            Url = new Uri("https://autoya.com/license")
         }
     });
     options.EnableAnnotations();
@@ -61,11 +61,7 @@ builder.Services.AddSwaggerGen(options =>
         {
             new OpenApiSecurityScheme
             {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "bearerAuth"
-                }
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "bearerAuth" }
             },
             Array.Empty<string>()
         }
@@ -89,7 +85,7 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Shared Injection Configuration
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-// AppSettings Configuration
+//AppSettings Configuration
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 // Dependency Injection Configuration
@@ -117,30 +113,9 @@ builder.Services.AddScoped<IUserService, UserService>();
 // AutoMapper Configuration
 builder.Services.AddAutoMapper(
     typeof(AutoYa_Backend.AutoYa.Mapping.ModelToResourceProfile),
-    typeof(AutoYa_Backend.Security.Mapping.ModelToResourceProfile),
     typeof(AutoYa_Backend.AutoYa.Mapping.ResourceToModelProfile),
+    typeof(AutoYa_Backend.Security.Mapping.ModelToResourceProfile),
     typeof(AutoYa_Backend.Security.Mapping.ResourceToModelProfile));
-
-// Configure Authentication
-builder.Services.AddAuthentication(options =>
-    {
-        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    })
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = "tu_issuer",
-            ValidAudience = null,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1d8bdf9f09bf608f9eb7b1413fff1f7dfe31d8ac3fff65374f609b1cf7efbbcf")),
-            ClockSkew = TimeSpan.Zero
-        };
-    });
 
 var app = builder.Build();
 
@@ -160,10 +135,11 @@ if (app.Environment.IsDevelopment())
     {
         options.SwaggerEndpoint("v1/swagger.json", "v1");
         options.RoutePrefix = "swagger";
+        
     });
 }
 
-// Configure CORS 
+// Configure CORS
 app.UseCors(x => x
     .AllowAnyOrigin()
     .AllowAnyMethod()
@@ -171,13 +147,10 @@ app.UseCors(x => x
 
 // Configure Error Handler Middleware
 app.UseMiddleware<ErrorHandlerMiddleware>();
-
 // Configure JWT Handling
 app.UseMiddleware<JwtMiddleware>();
 
 app.UseHttpsRedirection();
-
-app.UseAuthentication();
 
 app.UseAuthorization();
 

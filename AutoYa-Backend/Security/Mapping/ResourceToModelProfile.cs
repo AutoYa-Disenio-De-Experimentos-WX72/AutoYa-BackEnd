@@ -14,8 +14,7 @@ public class ResourceToModelProfile: Profile
                 (source, target, property) =>
                 {
                     if (property == null) return false;
-                    if (property.GetType() == typeof(string) &&
-                        string.IsNullOrEmpty((string)property)) return false;
+                    if (property.GetType() == typeof(string) && string.IsNullOrEmpty((string)property)) return false;
                     return true;
                 }
             ));

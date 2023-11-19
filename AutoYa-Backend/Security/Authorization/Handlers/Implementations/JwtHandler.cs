@@ -9,10 +9,9 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace AutoYa_Backend.Security.Authorization.Handlers.Implementations;
 
-public class JwtHandler: IJwtHandler
+public class JwtHandler : IJwtHandler
 {
     private readonly AppSettings _appSettings;
-
 
     public JwtHandler(IOptions<AppSettings> appSettings)
     {
@@ -46,12 +45,10 @@ public class JwtHandler: IJwtHandler
     {
         if (token == null)
             return null;
-
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-
+        
         // Execute Token validation
-
         try
         {
             tokenHandler.ValidateToken(token, new TokenValidationParameters
@@ -63,11 +60,9 @@ public class JwtHandler: IJwtHandler
                 // Expiration with no delay
                 ClockSkew = TimeSpan.Zero
             }, out SecurityToken validatedToken);
-
             var jwtToken = (JwtSecurityToken)validatedToken;
             var userId = int.Parse(jwtToken.Claims.First(
                 claim => claim.Type == "id").Value);
-
             return userId;
         }
         catch (Exception e)
