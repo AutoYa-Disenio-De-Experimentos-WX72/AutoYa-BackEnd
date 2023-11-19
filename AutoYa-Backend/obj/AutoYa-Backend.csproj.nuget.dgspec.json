@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {}
+    "E:\\Cursos\\Aplicaciones Web\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {}
   },
   "projects": {
-    "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {
+    "E:\\Cursos\\Aplicaciones Web\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "projectUniqueName": "E:\\Cursos\\Aplicaciones Web\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
         "projectName": "AutoYa-Backend",
-        "projectPath": "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
-        "packagesPath": "C:\\Users\\TheRivex1907\\.nuget\\packages\\",
-        "outputPath": "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\obj\\",
+        "projectPath": "E:\\Cursos\\Aplicaciones Web\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "packagesPath": "C:\\Users\\johan\\.nuget\\packages\\",
+        "outputPath": "E:\\Cursos\\Aplicaciones Web\\TF\\AutoYa-Backend\\AutoYa-Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TheRivex1907\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\johan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -104,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
