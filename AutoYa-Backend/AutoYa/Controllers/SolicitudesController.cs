@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AutoYa_Backend.AutoYa.Controllers;
 
+/// <summary>
+/// Controlador para gestionar operaciones CRUD en solicitudes.
+/// </summary>
 [ApiController]
     [Route("/api/v1/[controller]")]
     public class SolicitudesController : ControllerBase
@@ -14,12 +17,21 @@ namespace AutoYa_Backend.AutoYa.Controllers;
         private readonly ISolicitudService _solicitudService;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// Constructor de la clase SolicitudesController.
+        /// </summary>
+        /// <param name="solicitudService">Servicio de solicitudes.</param>
+        /// <param name="mapper">Instancia de AutoMapper.</param>
         public SolicitudesController(ISolicitudService solicitudService, IMapper mapper)
         {
             _solicitudService = solicitudService;
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Obtiene todas las solicitudes.
+        /// </summary>
+        /// <returns>Una colección de recursos de solicitudes.</returns>
         [HttpGet]
         public async Task<IEnumerable<SolicitudResource>> GetAllAsync()
         {
@@ -29,6 +41,11 @@ namespace AutoYa_Backend.AutoYa.Controllers;
             return resources;
         }
 
+        /// <summary>
+        /// Crea una nueva solicitud.
+        /// </summary>
+        /// <param name="resource">Datos de la solicitud a crear.</param>
+        /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveSolicitudResource resource)
         {
@@ -47,6 +64,12 @@ namespace AutoYa_Backend.AutoYa.Controllers;
             return Ok(solicitudResource);
         }
 
+        /// <summary>
+        /// Actualiza una solicitud existente.
+        /// </summary>
+        /// <param name="id">Identificador de la solicitud a actualizar.</param>
+        /// <param name="resource">Datos actualizados de la solicitud.</param>
+        /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveSolicitudResource resource)
         {
@@ -64,6 +87,11 @@ namespace AutoYa_Backend.AutoYa.Controllers;
             return Ok(solicitudResource);
         }
 
+        /// <summary>
+        /// Elimina una solicitud existente.
+        /// </summary>
+        /// <param name="id">Identificador de la solicitud a eliminar.</param>
+        /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {

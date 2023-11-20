@@ -1,0 +1,1383 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AutoYa-Backend</name>
+    </assembly>
+    <members>
+        <member name="T:AutoYa_Backend.AutoYa.Controllers.AlquileresController">
+            <summary>
+            Controlador para gestionar operaciones CRUD en alquileres.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.AlquileresController.#ctor(AutoYa_Backend.AutoYa.Domain.Services.IAlquilerService,AutoMapper.IMapper)">
+            <summary>
+            Constructor de la clase AlquileresController.
+            </summary>
+            <param name="alquilerService">Servicio de alquiler.</param>
+            <param name="mapper">Instancia de AutoMapper.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.AlquileresController.GetAllAsync">
+            <summary>
+            Obtiene todos los alquileres.
+            </summary>
+            <returns>Una colección de recursos de alquiler.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.AlquileresController.PostAsync(AutoYa_Backend.AutoYa.Resources.SaveAlquilerResource)">
+            <summary>
+            Crea un nuevo alquiler.
+            </summary>
+            <param name="resource">Datos del alquiler a crear.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.AlquileresController.PutAsync(System.Int32,AutoYa_Backend.AutoYa.Resources.SaveAlquilerResource)">
+            <summary>
+            Actualiza un alquiler existente.
+            </summary>
+            <param name="id">Identificador del alquiler a actualizar.</param>
+            <param name="resource">Datos actualizados del alquiler.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.AlquileresController.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un alquiler existente.
+            </summary>
+            <param name="id">Identificador del alquiler a eliminar.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Controllers.ArrendatariosController">
+            <summary>
+            Controlador para gestionar operaciones CRUD en arrendatarios.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.ArrendatariosController.#ctor(AutoYa_Backend.AutoYa.Domain.Services.IArrendatarioService,AutoMapper.IMapper)">
+            <summary>
+            Constructor de la clase ArrendatariosController.
+            </summary>
+            <param name="arrendatarioService">Servicio de arrendatarios.</param>
+            <param name="mapper">Instancia de AutoMapper.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.ArrendatariosController.GetAllAsync">
+            <summary>
+            Obtiene todos los arrendatarios.
+            </summary>
+            <returns>Una colección de recursos de arrendatarios.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.ArrendatariosController.PostAsync(AutoYa_Backend.AutoYa.Resources.SaveArrendatarioResource)">
+            <summary>
+            Crea un nuevo arrendatario.
+            </summary>
+            <param name="resource">Datos del arrendatario a crear.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.ArrendatariosController.PutAsync(System.Int32,AutoYa_Backend.AutoYa.Resources.SaveArrendatarioResource)">
+            <summary>
+            Actualiza un arrendatario existente.
+            </summary>
+            <param name="id">Identificador del arrendatario a actualizar.</param>
+            <param name="resource">Datos actualizados del arrendatario.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.ArrendatariosController.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un arrendatario existente.
+            </summary>
+            <param name="id">Identificador del arrendatario a eliminar.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Controllers.MantenimientosController">
+            <summary>
+            Controlador para gestionar operaciones CRUD en mantenimientos.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.MantenimientosController.#ctor(AutoYa_Backend.AutoYa.Domain.Services.IMantenimientoService,AutoMapper.IMapper)">
+            <summary>
+            Constructor de la clase MantenimientosController.
+            </summary>
+            <param name="mantenimientoService">Servicio de mantenimientos.</param>
+            <param name="mapper">Instancia de AutoMapper.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.MantenimientosController.GetAllAsync">
+            <summary>
+            Obtiene todos los mantenimientos.
+            </summary>
+            <returns>Una colección de recursos de mantenimientos.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.MantenimientosController.PostAsync(AutoYa_Backend.AutoYa.Resources.SaveMantenimientoResource)">
+            <summary>
+            Crea un nuevo mantenimiento.
+            </summary>
+            <param name="resource">Datos del mantenimiento a crear.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.MantenimientosController.PutAsync(System.Int32,AutoYa_Backend.AutoYa.Resources.SaveMantenimientoResource)">
+            <summary>
+            Actualiza un mantenimiento existente.
+            </summary>
+            <param name="id">Identificador del mantenimiento a actualizar.</param>
+            <param name="resource">Datos actualizados del mantenimiento.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.MantenimientosController.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un mantenimiento existente.
+            </summary>
+            <param name="id">Identificador del mantenimiento a eliminar.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Controllers.NotificacionesController">
+            <summary>
+            Controlador para gestionar operaciones CRUD en notificaciones.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.NotificacionesController.#ctor(AutoYa_Backend.AutoYa.Domain.Services.INotificacionService,AutoMapper.IMapper)">
+            <summary>
+            Constructor de la clase NotificacionesController.
+            </summary>
+            <param name="notificacionService">Servicio de notificaciones.</param>
+            <param name="mapper">Instancia de AutoMapper.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.NotificacionesController.GetAllAsync">
+            <summary>
+            Obtiene todas las notificaciones.
+            </summary>
+            <returns>Una colección de recursos de notificaciones.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.NotificacionesController.PostAsync(AutoYa_Backend.AutoYa.Resources.SaveNotificacionResource)">
+            <summary>
+            Crea una nueva notificación.
+            </summary>
+            <param name="resource">Datos de la notificación a crear.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.NotificacionesController.PutAsync(System.Int32,AutoYa_Backend.AutoYa.Resources.SaveNotificacionResource)">
+            <summary>
+            Actualiza una notificación existente.
+            </summary>
+            <param name="id">Identificador de la notificación a actualizar.</param>
+            <param name="resource">Datos actualizados de la notificación.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.NotificacionesController.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina una notificación existente.
+            </summary>
+            <param name="id">Identificador de la notificación a eliminar.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Controllers.PropietariosController">
+            <summary>
+            Controlador para gestionar operaciones CRUD en propietarios.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.PropietariosController.#ctor(AutoYa_Backend.AutoYa.Domain.Services.IPropietarioService,AutoMapper.IMapper)">
+            <summary>
+            Constructor de la clase PropietariosController.
+            </summary>
+            <param name="propietarioService">Servicio de propietarios.</param>
+            <param name="mapper">Instancia de AutoMapper.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.PropietariosController.GetAllAsync">
+            <summary>
+            Obtiene todos los propietarios.
+            </summary>
+            <returns>Una colección de recursos de propietarios.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.PropietariosController.PostAsync(AutoYa_Backend.AutoYa.Resources.SavePropietarioResource)">
+            <summary>
+            Crea un nuevo propietario.
+            </summary>
+            <param name="resource">Datos del propietario a crear.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.PropietariosController.PutAsync(System.Int32,AutoYa_Backend.AutoYa.Resources.SavePropietarioResource)">
+            <summary>
+            Actualiza un propietario existente.
+            </summary>
+            <param name="id">Identificador del propietario a actualizar.</param>
+            <param name="resource">Datos actualizados del propietario.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.PropietariosController.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un propietario existente.
+            </summary>
+            <param name="id">Identificador del propietario a eliminar.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Controllers.SolicitudesController">
+            <summary>
+            Controlador para gestionar operaciones CRUD en solicitudes.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.SolicitudesController.#ctor(AutoYa_Backend.AutoYa.Domain.Services.ISolicitudService,AutoMapper.IMapper)">
+            <summary>
+            Constructor de la clase SolicitudesController.
+            </summary>
+            <param name="solicitudService">Servicio de solicitudes.</param>
+            <param name="mapper">Instancia de AutoMapper.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.SolicitudesController.GetAllAsync">
+            <summary>
+            Obtiene todas las solicitudes.
+            </summary>
+            <returns>Una colección de recursos de solicitudes.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.SolicitudesController.PostAsync(AutoYa_Backend.AutoYa.Resources.SaveSolicitudResource)">
+            <summary>
+            Crea una nueva solicitud.
+            </summary>
+            <param name="resource">Datos de la solicitud a crear.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.SolicitudesController.PutAsync(System.Int32,AutoYa_Backend.AutoYa.Resources.SaveSolicitudResource)">
+            <summary>
+            Actualiza una solicitud existente.
+            </summary>
+            <param name="id">Identificador de la solicitud a actualizar.</param>
+            <param name="resource">Datos actualizados de la solicitud.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.SolicitudesController.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina una solicitud existente.
+            </summary>
+            <param name="id">Identificador de la solicitud a eliminar.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Controllers.VehiculosController">
+            <summary>
+            Controlador para gestionar operaciones CRUD en vehículos.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.VehiculosController.#ctor(AutoYa_Backend.AutoYa.Domain.Services.IVehiculoService,AutoMapper.IMapper)">
+            <summary>
+            Constructor de la clase VehiculosController.
+            </summary>
+            <param name="vehiculoService">Servicio de vehículos.</param>
+            <param name="mapper">Instancia de AutoMapper.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.VehiculosController.GetAllAsync">
+            <summary>
+            Obtiene todos los vehículos.
+            </summary>
+            <returns>Una colección de recursos de vehículos.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.VehiculosController.PostAsync(AutoYa_Backend.AutoYa.Resources.SaveVehiculoResource)">
+            <summary>
+            Crea un nuevo vehículo.
+            </summary>
+            <param name="resource">Datos del vehículo a crear.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.VehiculosController.PutAsync(System.Int32,AutoYa_Backend.AutoYa.Resources.SaveVehiculoResource)">
+            <summary>
+            Actualiza un vehículo existente.
+            </summary>
+            <param name="id">Identificador del vehículo a actualizar.</param>
+            <param name="resource">Datos actualizados del vehículo.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Controllers.VehiculosController.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un vehículo existente.
+            </summary>
+            <param name="id">Identificador del vehículo a eliminar.</param>
+            <returns>Una acción HTTP que indica el resultado de la operación.</returns>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Models.Alquiler">
+            <summary>
+            Representa un alquiler de vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.Id">
+            <summary>
+            Obtiene o establece el identificador del alquiler (clave primaria).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.Estado">
+            <summary>
+            Obtiene o establece el estado del alquiler.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.Fecha_inicio">
+            <summary>
+            Obtiene o establece la fecha de inicio del alquiler.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.Fecha_fin">
+            <summary>
+            Obtiene o establece la fecha de fin del alquiler.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.Costo_total">
+            <summary>
+            Obtiene o establece el costo total del alquiler, calculado como el tiempo de alquiler multiplicado por el precio de alquiler por unidad de tiempo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.VehiculoId">
+            <summary>
+            Obtiene o establece el identificador del vehículo asociado al alquiler (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.Vehiculo">
+            <summary>
+            Obtiene o establece la referencia al objeto Vehiculo asociado al alquiler.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.PropietarioId">
+            <summary>
+            Obtiene o establece el identificador del propietario asociado al alquiler (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.Propietario">
+            <summary>
+            Obtiene o establece la referencia al objeto Propietario asociado al alquiler.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.ArrendatarioId">
+            <summary>
+            Obtiene o establece el identificador del arrendatario asociado al alquiler (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.Arrendatario">
+            <summary>
+            Obtiene o establece la referencia al objeto Arrendatario asociado al alquiler.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Alquiler.Solicitudes">
+            <summary>
+            Obtiene o establece la lista de solicitudes asociadas al alquiler.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario">
+            <summary>
+            Representa a un arrendatario que puede alquilar vehículos y tiene diversas interacciones con el sistema.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.Id">
+            <summary>
+            Obtiene o establece el identificador del arrendatario (clave primaria).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.Nombres">
+            <summary>
+            Obtiene o establece el nombre(s) del arrendatario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.Apellidos">
+            <summary>
+            Obtiene o establece los apellidos del arrendatario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.FechaNacimiento">
+            <summary>
+            Obtiene o establece la fecha de nacimiento del arrendatario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.Telefono">
+            <summary>
+            Obtiene o establece el número de teléfono del arrendatario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.Correo">
+            <summary>
+            Obtiene o establece la dirección de correo electrónico del arrendatario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.AntecedentesPenalesPdf">
+            <summary>
+            Obtiene o establece la ruta del archivo PDF que contiene los antecedentes penales del arrendatario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.Contrasenia">
+            <summary>
+            Obtiene o establece la contraseña del arrendatario para acceder al sistema.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.VehiculosAlquilados">
+            <summary>
+            Obtiene o establece la lista de vehículos que el arrendatario tiene actualmente alquilados.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.Alquileres">
+            <summary>
+            Obtiene o establece la lista de alquileres realizados por el arrendatario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.Mantenimientos">
+            <summary>
+            Obtiene o establece la lista de mantenimientos solicitados por el arrendatario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Arrendatario.Notificaciones">
+            <summary>
+            Obtiene o establece la lista de notificaciones recibidas por el arrendatario.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento">
+            <summary>
+            Representa un registro de mantenimiento asociado a un vehículo y reportado por un arrendatario o propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento.Id">
+            <summary>
+            Obtiene o establece el identificador del mantenimiento (clave primaria).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento.TipoProblema">
+            <summary>
+            Obtiene o establece el tipo de problema reportado durante el mantenimiento.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento.Titulo">
+            <summary>
+            Obtiene o establece el título del mantenimiento para identificar el problema.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento.Descripcion">
+            <summary>
+            Obtiene o establece una descripción detallada del problema reportado durante el mantenimiento.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento.UrlImagen">
+            <summary>
+            Obtiene o establece la URL de la imagen que ilustra el problema reportado durante el mantenimiento.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento.ArrendatarioId">
+            <summary>
+            Obtiene o establece el identificador del arrendatario que reportó el mantenimiento (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento.Arrendatario">
+            <summary>
+            Obtiene o establece la referencia al objeto Arrendatario que reportó el mantenimiento.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento.PropietarioId">
+            <summary>
+            Obtiene o establece el identificador del propietario asociado al mantenimiento (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento.Propietario">
+            <summary>
+            Obtiene o establece la referencia al objeto Propietario asociado al mantenimiento.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Models.Notificacion">
+            <summary>
+            Representa una notificación que puede contener información sobre solicitudes o mensajes de mantenimiento.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Notificacion.Id">
+            <summary>
+            Obtiene o establece el identificador de la notificación (clave primaria).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Notificacion.Body">
+            <summary>
+            Obtiene o establece el contenido del mensaje de la notificación.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Notificacion.PropietarioId">
+            <summary>
+            Obtiene o establece el identificador del propietario al cual está dirigida la notificación (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Notificacion.Propietario">
+            <summary>
+            Obtiene o establece la referencia al objeto Propietario al cual está dirigida la notificación.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Notificacion.ArrendatarioId">
+            <summary>
+            Obtiene o establece el identificador del arrendatario que envió la notificación (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Notificacion.Arrendatario">
+            <summary>
+            Obtiene o establece la referencia al objeto Arrendatario que envió la notificación.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Models.Propietario">
+            <summary>
+            Representa a un propietario de vehículos en el sistema.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Id">
+            <summary>
+            Obtiene o establece el identificador del propietario (clave primaria).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Nombres">
+            <summary>
+            Obtiene o establece los nombres del propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Apellidos">
+            <summary>
+            Obtiene o establece los apellidos del propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.FechaNacimiento">
+            <summary>
+            Obtiene o establece la fecha de nacimiento del propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Telefono">
+            <summary>
+            Obtiene o establece el número de teléfono del propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Correo">
+            <summary>
+            Obtiene o establece la dirección de correo electrónico del propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Contrasenia">
+            <summary>
+            Obtiene o establece la contraseña asociada al propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Vehiculos">
+            <summary>
+            Obtiene la lista de vehículos asociados a este propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Alquileres">
+            <summary>
+            Obtiene la lista de alquileres realizados por este propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Mantenimientos">
+            <summary>
+            Obtiene la lista de mantenimientos registrados por este propietario.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Propietario.Notificaciones">
+            <summary>
+            Obtiene la lista de notificaciones asociadas a este propietario.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Models.Solicitud">
+            <summary>
+            Representa una solicitud relacionada con un alquiler en el sistema.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Solicitud.Id">
+            <summary>
+            Obtiene o establece el identificador de la solicitud (clave primaria).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Solicitud.Body">
+            <summary>
+            Obtiene o establece el contenido o mensaje de la solicitud.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Solicitud.AlquilerId">
+            <summary>
+            Obtiene o establece el identificador del alquiler al cual está asociada la solicitud (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Solicitud.Alquiler">
+            <summary>
+            Obtiene o establece la referencia al objeto Alquiler al cual está asociada la solicitud.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo">
+            <summary>
+            Representa un vehículo disponible para alquiler en el sistema.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Id">
+            <summary>
+            Obtiene o establece el identificador del vehículo (clave primaria).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Marca">
+            <summary>
+            Obtiene o establece la marca del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Modelo">
+            <summary>
+            Obtiene o establece el modelo del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.VelocidadMax">
+            <summary>
+            Obtiene o establece la velocidad máxima del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Consumo">
+            <summary>
+            Obtiene o establece el consumo de combustible del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Dimensiones">
+            <summary>
+            Obtiene o establece las dimensiones del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Peso">
+            <summary>
+            Obtiene o establece el peso del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Clase">
+            <summary>
+            Obtiene o establece la clase del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Transmision">
+            <summary>
+            Obtiene o establece el tipo de transmisión del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Tiempo">
+            <summary>
+            Obtiene o establece el tiempo de alquiler del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.TipoTiempo">
+            <summary>
+            Obtiene o establece el tipo de tiempo para el alquiler del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.CostoAlquiler">
+            <summary>
+            Obtiene o establece el costo de alquiler por unidad de tiempo del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.LugarRecojo">
+            <summary>
+            Obtiene o establece el lugar de recojo del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.UrlImagen">
+            <summary>
+            Obtiene o establece la URL de la imagen del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.ContratoAlquilerPdf">
+            <summary>
+            Obtiene o establece la ruta o identificador del contrato de alquiler en formato PDF.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.EstadoRenta">
+            <summary>
+            Obtiene o establece el estado de renta del vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.PropietarioId">
+            <summary>
+            Obtiene o establece el identificador del propietario al cual pertenece el vehículo (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Propietario">
+            <summary>
+            Obtiene o establece la referencia al objeto Propietario al cual pertenece el vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.ArrendatarioId">
+            <summary>
+            Obtiene o establece el identificador del arrendatario que tiene actualmente el vehículo (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Arrendatario">
+            <summary>
+            Obtiene o establece la referencia al objeto Arrendatario que tiene actualmente el vehículo.
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.AlquilerId">
+            <summary>
+            Obtiene o establece el identificador del alquiler asociado al vehículo (clave foránea).
+            </summary>
+        </member>
+        <member name="P:AutoYa_Backend.AutoYa.Domain.Models.Vehiculo.Alquiler">
+            <summary>
+            Obtiene o establece la referencia al objeto Alquiler asociado al vehículo.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Repositories.IAlquilerRepository">
+            <summary>
+            Interfaz que define operaciones de acceso a datos para la entidad Alquiler.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IAlquilerRepository.ListAsync">
+            <summary>
+            Obtiene todos los alquileres en el sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IAlquilerRepository.AddAsync(AutoYa_Backend.AutoYa.Domain.Models.Alquiler)">
+            <summary>
+            Agrega un nuevo alquiler al sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IAlquilerRepository.FindByIdAsync(System.Nullable{System.Int32})">
+            <summary>
+            Busca un alquiler por su identificador único.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IAlquilerRepository.Update(AutoYa_Backend.AutoYa.Domain.Models.Alquiler)">
+            <summary>
+            Actualiza la información de un alquiler existente.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IAlquilerRepository.Remove(AutoYa_Backend.AutoYa.Domain.Models.Alquiler)">
+            <summary>
+            Elimina un alquiler del sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IAlquilerRepository.FindByVehiculoIdAsync(System.Int32)">
+            <summary>
+            Busca alquileres asociados a un vehículo específico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IAlquilerRepository.FindByPropietarioIdAsync(System.Int32)">
+            <summary>
+            Busca alquileres asociados a un propietario específico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IAlquilerRepository.FindByArrendatarioIdAsync(System.Int32)">
+            <summary>
+            Busca alquileres asociados a un arrendatario específico.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Repositories.IArrendatarioRepository">
+            <summary>
+            Interfaz que define operaciones de acceso a datos para la entidad Arrendatario.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IArrendatarioRepository.ListAsync">
+            <summary>
+            Obtiene todos los arrendatarios en el sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IArrendatarioRepository.AddAsync(AutoYa_Backend.AutoYa.Domain.Models.Arrendatario)">
+            <summary>
+            Agrega un nuevo arrendatario al sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IArrendatarioRepository.FindByIdAsync(System.Nullable{System.Int32})">
+            <summary>
+            Busca un arrendatario por su identificador único.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IArrendatarioRepository.FindByEmailAsync(System.String)">
+            <summary>
+            Busca un arrendatario por su dirección de correo electrónico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IArrendatarioRepository.Update(AutoYa_Backend.AutoYa.Domain.Models.Arrendatario)">
+            <summary>
+            Actualiza la información de un arrendatario existente.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IArrendatarioRepository.Remove(AutoYa_Backend.AutoYa.Domain.Models.Arrendatario)">
+            <summary>
+            Elimina un arrendatario del sistema.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Repositories.IMantenimientoRepository">
+            <summary>
+            Interfaz que define operaciones de acceso a datos para la entidad Mantenimiento.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IMantenimientoRepository.ListAsync">
+            <summary>
+            Obtiene todos los registros de mantenimiento en el sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IMantenimientoRepository.AddAsync(AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento)">
+            <summary>
+            Agrega un nuevo registro de mantenimiento al sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IMantenimientoRepository.FindByIdAsync(System.Int32)">
+            <summary>
+            Busca un registro de mantenimiento por su identificador único.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IMantenimientoRepository.Update(AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento)">
+            <summary>
+            Actualiza la información de un registro de mantenimiento existente.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IMantenimientoRepository.Remove(AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento)">
+            <summary>
+            Elimina un registro de mantenimiento del sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IMantenimientoRepository.FindByArrendatarioIdAsync(System.Int32)">
+            <summary>
+            Busca registros de mantenimiento asociados a un arrendatario específico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IMantenimientoRepository.FindByPropietarioIdAsync(System.Int32)">
+            <summary>
+            Busca registros de mantenimiento asociados a un propietario específico.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Repositories.INotificacionRepository">
+            <summary>
+            Interfaz que define operaciones de acceso a datos para la entidad Notificacion.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.INotificacionRepository.ListAsync">
+            <summary>
+            Obtiene todos los registros de notificaciones en el sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.INotificacionRepository.AddAsync(AutoYa_Backend.AutoYa.Domain.Models.Notificacion)">
+            <summary>
+            Agrega una nueva notificación al sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.INotificacionRepository.FindByIdAsync(System.Int32)">
+            <summary>
+            Busca una notificación por su identificador único.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.INotificacionRepository.Update(AutoYa_Backend.AutoYa.Domain.Models.Notificacion)">
+            <summary>
+            Actualiza la información de una notificación existente.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.INotificacionRepository.Remove(AutoYa_Backend.AutoYa.Domain.Models.Notificacion)">
+            <summary>
+            Elimina una notificación del sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.INotificacionRepository.FindByPropietarioIdAsync(System.Int32)">
+            <summary>
+            Busca notificaciones asociadas a un propietario específico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.INotificacionRepository.FindByArrendatarioIdAsync(System.Int32)">
+            <summary>
+            Busca notificaciones asociadas a un arrendatario específico.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Repositories.IPropietarioRepository">
+            <summary>
+            Interfaz que define operaciones de acceso a datos para la entidad Propietario.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IPropietarioRepository.ListAsync">
+            <summary>
+            Obtiene todos los registros de propietarios en el sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IPropietarioRepository.AddAsync(AutoYa_Backend.AutoYa.Domain.Models.Propietario)">
+            <summary>
+            Agrega un nuevo propietario al sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IPropietarioRepository.FindByIdAsync(System.Int32)">
+            <summary>
+            Busca un propietario por su identificador único.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IPropietarioRepository.Update(AutoYa_Backend.AutoYa.Domain.Models.Propietario)">
+            <summary>
+            Actualiza la información de un propietario existente.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IPropietarioRepository.Remove(AutoYa_Backend.AutoYa.Domain.Models.Propietario)">
+            <summary>
+            Elimina un propietario del sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IPropietarioRepository.FindByEmailAsync(System.String)">
+            <summary>
+            Busca un propietario por su dirección de correo electrónico.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Repositories.ISolicitudRepository">
+            <summary>
+            Interfaz que define operaciones de acceso a datos para la entidad Solicitud.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.ISolicitudRepository.ListAsync">
+            <summary>
+            Obtiene todos los registros de solicitudes en el sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.ISolicitudRepository.AddAsync(AutoYa_Backend.AutoYa.Domain.Models.Solicitud)">
+            <summary>
+            Agrega una nueva solicitud al sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.ISolicitudRepository.FindByIdAsync(System.Int32)">
+            <summary>
+            Busca una solicitud por su identificador único.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.ISolicitudRepository.Update(AutoYa_Backend.AutoYa.Domain.Models.Solicitud)">
+            <summary>
+            Actualiza la información de una solicitud existente.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.ISolicitudRepository.Remove(AutoYa_Backend.AutoYa.Domain.Models.Solicitud)">
+            <summary>
+            Elimina una solicitud del sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.ISolicitudRepository.FindByAlquilerIdAsync(System.Int32)">
+            <summary>
+            Busca solicitudes asociadas a un alquiler específico.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Repositories.IVehiculoRepository">
+            <summary>
+            Interfaz que define operaciones de acceso a datos para la entidad Vehiculo.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IVehiculoRepository.ListAsync">
+            <summary>
+            Obtiene todos los registros de vehículos en el sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IVehiculoRepository.AddAsync(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
+            <summary>
+            Agrega un nuevo vehículo al sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IVehiculoRepository.FindByIdAsync(System.Int32)">
+            <summary>
+            Busca un vehículo por su identificador único.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IVehiculoRepository.Update(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
+            <summary>
+            Actualiza la información de un vehículo existente.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IVehiculoRepository.Remove(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
+            <summary>
+            Elimina un vehículo del sistema.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IVehiculoRepository.FindByPropietarioIdAsync(System.Int32)">
+            <summary>
+            Busca vehículos asociados a un propietario específico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IVehiculoRepository.FindByArrendatarioIdAsync(System.Int32)">
+            <summary>
+            Busca vehículos asociados a un arrendatario específico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Repositories.IVehiculoRepository.FindByAlquilerIdAsync(System.Int32)">
+            <summary>
+            Busca vehículos asociados a un alquiler específico.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.Communication.AlquilerResponse">
+            <summary>
+            Clase que representa la respuesta de una operación relacionada con la entidad Alquiler.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.AlquilerResponse.#ctor(System.String)">
+            <summary>
+            Constructor para una respuesta que indica un error.
+            </summary>
+            <param name="message">Mensaje de error.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.AlquilerResponse.#ctor(AutoYa_Backend.AutoYa.Domain.Models.Alquiler)">
+            <summary>
+            Constructor para una respuesta exitosa.
+            </summary>
+            <param name="resource">Recursos relacionados con la respuesta.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.Communication.ArrendatarioResponse">
+            <summary>
+            Clase que representa la respuesta de una operación relacionada con la entidad Arrendatario.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.ArrendatarioResponse.#ctor(System.String)">
+            <summary>
+            Constructor para una respuesta que indica un error.
+            </summary>
+            <param name="message">Mensaje de error.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.ArrendatarioResponse.#ctor(AutoYa_Backend.AutoYa.Domain.Models.Arrendatario)">
+            <summary>
+            Constructor para una respuesta exitosa.
+            </summary>
+            <param name="resource">Recursos relacionados con la respuesta.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.Communication.MantenimientoResponse">
+            <summary>
+            Clase que representa la respuesta de una operación relacionada con la entidad Mantenimiento.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.MantenimientoResponse.#ctor(System.String)">
+            <summary>
+            Constructor para una respuesta que indica un error.
+            </summary>
+            <param name="message">Mensaje de error.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.MantenimientoResponse.#ctor(AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento)">
+            <summary>
+            Constructor para una respuesta exitosa.
+            </summary>
+            <param name="resource">Recursos relacionados con la respuesta.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.Communication.NotificacionResponse">
+            <summary>
+            Clase que representa la respuesta de una operación relacionada con la entidad Notificacion.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.NotificacionResponse.#ctor(System.String)">
+            <summary>
+            Constructor para una respuesta que indica un error.
+            </summary>
+            <param name="message">Mensaje de error.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.NotificacionResponse.#ctor(AutoYa_Backend.AutoYa.Domain.Models.Notificacion)">
+            <summary>
+            Constructor para una respuesta exitosa.
+            </summary>
+            <param name="resource">Recursos relacionados con la respuesta.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.Communication.PropietarioResponse">
+            <summary>
+            Clase que representa la respuesta de una operación relacionada con la entidad Propietario.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.PropietarioResponse.#ctor(System.String)">
+            <summary>
+            Constructor para una respuesta que indica un error.
+            </summary>
+            <param name="message">Mensaje de error.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.PropietarioResponse.#ctor(AutoYa_Backend.AutoYa.Domain.Models.Propietario)">
+            <summary>
+            Constructor para una respuesta exitosa.
+            </summary>
+            <param name="resource">Recursos relacionados con la respuesta.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.Communication.SolicitudResponse">
+            <summary>
+            Clase que representa la respuesta de una operación relacionada con la entidad Solicitud.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.SolicitudResponse.#ctor(System.String)">
+            <summary>
+            Constructor para una respuesta que indica un error.
+            </summary>
+            <param name="message">Mensaje de error.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.SolicitudResponse.#ctor(AutoYa_Backend.AutoYa.Domain.Models.Solicitud)">
+            <summary>
+            Constructor para una respuesta exitosa.
+            </summary>
+            <param name="resource">Recursos relacionados con la respuesta.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.Communication.VehiculoResponse">
+            <summary>
+            Clase que representa la respuesta de una operación relacionada con la entidad Vehiculo.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.VehiculoResponse.#ctor(System.String)">
+            <summary>
+            Constructor para una respuesta que indica un error.
+            </summary>
+            <param name="message">Mensaje de error.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.Communication.VehiculoResponse.#ctor(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
+            <summary>
+            Constructor para una respuesta exitosa.
+            </summary>
+            <param name="resource">Recursos relacionados con la respuesta.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.IAlquilerService">
+            <summary>
+            Interfaz que define las operaciones relacionadas con la entidad Alquiler.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IAlquilerService.ListAsync">
+            <summary>
+            Obtiene todos los alquileres.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IAlquilerService.ListByVehiculoIdAsync(System.Int32)">
+            <summary>
+            Obtiene los alquileres asociados a un vehículo específico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IAlquilerService.ListByPropietarioIdAsync(System.Int32)">
+            <summary>
+            Obtiene los alquileres asociados a un propietario específico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IAlquilerService.ListByArrendatarioIdAsync(System.Int32)">
+            <summary>
+            Obtiene los alquileres asociados a un arrendatario específico.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IAlquilerService.SaveAsync(AutoYa_Backend.AutoYa.Domain.Models.Alquiler)">
+            <summary>
+            Guarda un nuevo alquiler.
+            </summary>
+            <param name="alquiler">Instancia de Alquiler a guardar.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IAlquilerService.UpdateAsync(System.Int32,AutoYa_Backend.AutoYa.Domain.Models.Alquiler)">
+            <summary>
+            Actualiza la información de un alquiler existente.
+            </summary>
+            <param name="alquilerId">Identificador del alquiler a actualizar.</param>
+            <param name="alquiler">Instancia de Alquiler con la información actualizada.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IAlquilerService.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un alquiler existente.
+            </summary>
+            <param name="alquilerId">Identificador del alquiler a eliminar.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.IArrendatarioService">
+            <summary>
+            Interfaz que define las operaciones relacionadas con la entidad Arrendatario.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IArrendatarioService.ListAsync">
+            <summary>
+            Obtiene todos los arrendatarios.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IArrendatarioService.SaveAsync(AutoYa_Backend.AutoYa.Domain.Models.Arrendatario)">
+            <summary>
+            Guarda un nuevo arrendatario.
+            </summary>
+            <param name="arrendatario">Instancia de Arrendatario a guardar.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IArrendatarioService.UpdateAsync(System.Int32,AutoYa_Backend.AutoYa.Domain.Models.Arrendatario)">
+            <summary>
+            Actualiza la información de un arrendatario existente.
+            </summary>
+            <param name="id">Identificador del arrendatario a actualizar.</param>
+            <param name="arrendatario">Instancia de Arrendatario con la información actualizada.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IArrendatarioService.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un arrendatario existente.
+            </summary>
+            <param name="id">Identificador del arrendatario a eliminar.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.IMantenimientoService">
+            <summary>
+            Interfaz que define las operaciones relacionadas con la entidad Mantenimiento.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IMantenimientoService.ListAsync">
+            <summary>
+            Obtiene todos los mantenimientos.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IMantenimientoService.ListByPropietarioIdAsync(System.Int32)">
+            <summary>
+            Obtiene los mantenimientos asociados a un propietario específico.
+            </summary>
+            <param name="propietarioId">Identificador del propietario.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IMantenimientoService.ListByArrendatarioIdAsync(System.Int32)">
+            <summary>
+            Obtiene los mantenimientos asociados a un arrendatario específico.
+            </summary>
+            <param name="arrendatarioId">Identificador del arrendatario.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IMantenimientoService.SaveAsync(AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento)">
+            <summary>
+            Guarda un nuevo mantenimiento.
+            </summary>
+            <param name="mantenimiento">Instancia de Mantenimiento a guardar.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IMantenimientoService.UpdateAsync(System.Int32,AutoYa_Backend.AutoYa.Domain.Models.Mantenimiento)">
+            <summary>
+            Actualiza la información de un mantenimiento existente.
+            </summary>
+            <param name="mantenimientoId">Identificador del mantenimiento a actualizar.</param>
+            <param name="mantenimiento">Instancia de Mantenimiento con la información actualizada.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IMantenimientoService.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un mantenimiento existente.
+            </summary>
+            <param name="mantenimientoId">Identificador del mantenimiento a eliminar.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.INotificacionService">
+            <summary>
+            Interfaz que define las operaciones relacionadas con la entidad Notificacion.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.INotificacionService.ListAsync">
+            <summary>
+            Obtiene todas las notificaciones.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.INotificacionService.ListByPropietarioIdAsync(System.Int32)">
+            <summary>
+            Obtiene las notificaciones asociadas a un propietario específico.
+            </summary>
+            <param name="propietarioId">Identificador del propietario.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.INotificacionService.ListByArrendatarioIdAsync(System.Int32)">
+            <summary>
+            Obtiene las notificaciones asociadas a un arrendatario específico.
+            </summary>
+            <param name="arrendatarioId">Identificador del arrendatario.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.INotificacionService.SaveAsync(AutoYa_Backend.AutoYa.Domain.Models.Notificacion)">
+            <summary>
+            Guarda una nueva notificacion.
+            </summary>
+            <param name="notificacion">Instancia de Notificacion a guardar.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.INotificacionService.UpdateAsync(System.Int32,AutoYa_Backend.AutoYa.Domain.Models.Notificacion)">
+            <summary>
+            Actualiza la información de una notificacion existente.
+            </summary>
+            <param name="notificacionId">Identificador de la notificacion a actualizar.</param>
+            <param name="notificacion">Instancia de Notificacion con la información actualizada.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.INotificacionService.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina una notificacion existente.
+            </summary>
+            <param name="notificacionId">Identificador de la notificacion a eliminar.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.IPropietarioService">
+            <summary>
+            Interfaz que define las operaciones relacionadas con la entidad Propietario.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IPropietarioService.ListAsync">
+            <summary>
+            Obtiene todos los propietarios.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IPropietarioService.SaveAsync(AutoYa_Backend.AutoYa.Domain.Models.Propietario)">
+            <summary>
+            Guarda un nuevo propietario.
+            </summary>
+            <param name="propietario">Instancia de Propietario a guardar.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IPropietarioService.UpdateAsync(System.Int32,AutoYa_Backend.AutoYa.Domain.Models.Propietario)">
+            <summary>
+            Actualiza la información de un propietario existente.
+            </summary>
+            <param name="id">Identificador del propietario a actualizar.</param>
+            <param name="propietario">Instancia de Propietario con la información actualizada.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IPropietarioService.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un propietario existente.
+            </summary>
+            <param name="id">Identificador del propietario a eliminar.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.ISolicitudService">
+            <summary>
+            Interfaz que define las operaciones relacionadas con la entidad Solicitud.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.ISolicitudService.ListAsync">
+            <summary>
+            Obtiene todas las solicitudes.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.ISolicitudService.ListByAlquilerIdAsync(System.Int32)">
+            <summary>
+            Obtiene todas las solicitudes asociadas a un alquiler específico.
+            </summary>
+            <param name="alquilerId">Identificador del alquiler.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.ISolicitudService.SaveAsync(AutoYa_Backend.AutoYa.Domain.Models.Solicitud)">
+            <summary>
+            Guarda una nueva solicitud.
+            </summary>
+            <param name="solicitud">Instancia de Solicitud a guardar.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.ISolicitudService.UpdateAsync(System.Int32,AutoYa_Backend.AutoYa.Domain.Models.Solicitud)">
+            <summary>
+            Actualiza la información de una solicitud existente.
+            </summary>
+            <param name="solicitudId">Identificador de la solicitud a actualizar.</param>
+            <param name="solicitud">Instancia de Solicitud con la información actualizada.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.ISolicitudService.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina una solicitud existente.
+            </summary>
+            <param name="solicitudId">Identificador de la solicitud a eliminar.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Domain.Services.IVehiculoService">
+            <summary>
+            Interfaz que define las operaciones relacionadas con la entidad Vehiculo.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IVehiculoService.ListAsync">
+            <summary>
+            Obtiene todos los vehículos.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IVehiculoService.ListByPropietarioIdAsync(System.Int32)">
+            <summary>
+            Obtiene todos los vehículos asociados a un propietario específico.
+            </summary>
+            <param name="propietarioId">Identificador del propietario.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IVehiculoService.ListByArrendatarioIdAsync(System.Int32)">
+            <summary>
+            Obtiene todos los vehículos asociados a un arrendatario específico.
+            </summary>
+            <param name="arrendatarioId">Identificador del arrendatario.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IVehiculoService.ListByAlquilerIdAsync(System.Int32)">
+            <summary>
+            Obtiene todos los vehículos asociados a un alquiler específico.
+            </summary>
+            <param name="alquilerId">Identificador del alquiler.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IVehiculoService.SaveAsync(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
+            <summary>
+            Guarda un nuevo vehículo.
+            </summary>
+            <param name="vehiculo">Instancia de Vehiculo a guardar.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IVehiculoService.UpdateAsync(System.Int32,AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
+            <summary>
+            Actualiza la información de un vehículo existente.
+            </summary>
+            <param name="vehiculoId">Identificador del vehículo a actualizar.</param>
+            <param name="vehiculo">Instancia de Vehiculo con la información actualizada.</param>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Domain.Services.IVehiculoService.DeleteAsync(System.Int32)">
+            <summary>
+            Elimina un vehículo existente.
+            </summary>
+            <param name="vehiculoId">Identificador del vehículo a eliminar.</param>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Mapping.ModelToResourceProfile">
+            <summary>
+            Perfil AutoMapper para mapear modelos de dominio a recursos.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Mapping.ModelToResourceProfile.#ctor">
+            <summary>
+            Inicializa una nueva instancia del perfil de mapeo de modelos a recursos.
+            </summary>
+        </member>
+        <member name="T:AutoYa_Backend.AutoYa.Mapping.ResourceToModelProfile">
+            <summary>
+            Perfil AutoMapper para mapear recursos de guardado a modelos de dominio.
+            </summary>
+        </member>
+        <member name="M:AutoYa_Backend.AutoYa.Mapping.ResourceToModelProfile.#ctor">
+            <summary>
+            Inicializa una nueva instancia del perfil de mapeo de recursos de guardado a modelos de dominio.
+            </summary>
+        </member>
+    </members>
+</doc>

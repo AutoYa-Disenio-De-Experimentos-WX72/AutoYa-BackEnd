@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AutoYa_Backend.AutoYa.Controllers;
 
+/// <summary>
+/// Controlador para gestionar operaciones CRUD en alquileres.
+/// </summary>
 [ApiController]
 [Route("/api/v1/[controller]")]
 public class AlquileresController : ControllerBase
@@ -14,12 +17,21 @@ public class AlquileresController : ControllerBase
     private readonly IAlquilerService _alquilerService;
     private readonly IMapper _mapper;
 
+    /// <summary>
+    /// Constructor de la clase AlquileresController.
+    /// </summary>
+    /// <param name="alquilerService">Servicio de alquiler.</param>
+    /// <param name="mapper">Instancia de AutoMapper.</param>
     public AlquileresController(IAlquilerService alquilerService, IMapper mapper)
     {
         _alquilerService = alquilerService;
         _mapper = mapper;
     }
     
+    /// <summary>
+    /// Obtiene todos los alquileres.
+    /// </summary>
+    /// <returns>Una colección de recursos de alquiler.</returns>
     [HttpGet]
     public async Task<IEnumerable<AlquilerResource>> GetAllAsync()
     {
@@ -49,7 +61,11 @@ public class AlquileresController : ControllerBase
         return resources;
     }
 
-    
+    /// <summary>
+    /// Crea un nuevo alquiler.
+    /// </summary>
+    /// <param name="resource">Datos del alquiler a crear.</param>
+    /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
     [HttpPost]
     public async Task<IActionResult> PostAsync([FromBody] SaveAlquilerResource resource)
     {
@@ -76,6 +92,12 @@ public class AlquileresController : ControllerBase
         return Ok(alquilerResource);
     }
 
+    /// <summary>
+    /// Actualiza un alquiler existente.
+    /// </summary>
+    /// <param name="id">Identificador del alquiler a actualizar.</param>
+    /// <param name="resource">Datos actualizados del alquiler.</param>
+    /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
     [HttpPut("{id}")]
     public async Task<IActionResult> PutAsync(int id, [FromBody] SaveAlquilerResource resource)
     {
@@ -93,6 +115,11 @@ public class AlquileresController : ControllerBase
         return Ok(alquilerResource);
     }
 
+    /// <summary>
+    /// Elimina un alquiler existente.
+    /// </summary>
+    /// <param name="id">Identificador del alquiler a eliminar.</param>
+    /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAsync(int id)
     {
