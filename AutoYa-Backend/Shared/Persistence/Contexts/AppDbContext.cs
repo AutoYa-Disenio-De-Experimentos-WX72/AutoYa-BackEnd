@@ -5,22 +5,45 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AutoYa_Backend.Shared.Persistence.Contexts;
 
+/// <summary>
+/// Representa el contexto de la aplicación que interactúa con la base de datos.
+/// </summary>
 public class AppDbContext : DbContext
 {
+    /// <summary>
+    /// Constructor que inicializa una nueva instancia de la clase AppDbContext.
+    /// </summary>
+    /// <param name="options">Opciones para configurar el contexto de la base de datos.</param>
     public AppDbContext(DbContextOptions options) : base(options)
     {
     }
 
+    /// <summary>
+    /// Obtiene o establece el conjunto de datos de alquileres.
+    /// </summary>
     public DbSet<Alquiler> Alquileres { get; set; }
+    
+    /// <summary>
+    /// Obtiene o establece el conjunto de datos de arrendatarios.
+    /// </summary>
     public DbSet<Arrendatario> Arrendatarios { get; set; }
     public DbSet<Mantenimiento> Mantenimientos { get; set; }
+    
     public DbSet<Notificacion> Notificaciones { get; set; }
     public DbSet<Propietario> Propietarios { get; set; }
     public DbSet<Solicitud> Solicitudes { get; set; }
     public DbSet<Vehiculo> Vehiculos { get; set; }
     
+    /// <summary>
+    /// Configuración del modelo de base de datos al crear el contexto.
+    /// </summary>
+    /// <param name="builder">Constructor de modelos para configurar entidades y relaciones.</param>
     public DbSet<User> Usuarios { get; set; }
     
+    /// <summary>
+    /// Configuración del modelo de base de datos al crear el contexto.
+    /// </summary>
+    /// <param name="builder">Constructor de modelos para configurar entidades y relaciones.</param>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -134,13 +157,37 @@ public class AppDbContext : DbContext
          * Configuración para los usuarios
          */
         
+        /// <summary>
+        /// Mapea la entidad User a la tabla "Usuarios" con las propiedades especificadas.
+        /// </summary>
         builder.Entity<User>().ToTable("Usuarios");
+        
+        /// <summary>
+        /// Define la clave primaria y su generación automática.
+        /// </summary>
         builder.Entity<User>().HasKey(p => p.Id);
+        
+        /// <summary>
+        /// Define la propiedad Id como requerida y generada al agregar.
+        /// </summary>
         builder.Entity<User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+        
+        /// <summary>
+        /// Define la propiedad Email como requerida y con una longitud máxima de 30 caracteres.
+        /// </summary>
         builder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(30);
+        
+        /// <summary>
+        /// Define la propiedad FirstName como requerida.
+        /// </summary>
         builder.Entity<User>().Property(p => p.FirstName).IsRequired();
+        
+        /// <summary>
+        /// Define la propiedad LastName como requerida.
+        /// </summary>
         builder.Entity<User>().Property(p => p.LastName).IsRequired();
         
+        // Utiliza la convención de nomenclatura SnakeCase para el modelo de datos.    
     builder.UseSnakeCaseNamingConvention();
     }
 }

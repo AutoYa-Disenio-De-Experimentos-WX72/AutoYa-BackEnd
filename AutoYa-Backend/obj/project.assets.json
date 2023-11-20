@@ -3563,26 +3563,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TheRivex1907\\.nuget\\packages\\": {}
+    "C:\\Users\\jhanc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
+      "projectUniqueName": "D:\\AUTOYA\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
       "projectName": "AutoYa-Backend",
-      "projectPath": "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
-      "packagesPath": "C:\\Users\\TheRivex1907\\.nuget\\packages\\",
-      "outputPath": "A:\\TheRivex1907\\Documents\\Universidad\\Sexto ciclo\\Aplicaciones Web\\AutoYa-Backend\\AutoYa-Backend\\obj\\",
+      "projectPath": "D:\\AUTOYA\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
+      "packagesPath": "C:\\Users\\jhanc\\.nuget\\packages\\",
+      "outputPath": "D:\\AUTOYA\\AutoYa-Backend\\AutoYa-Backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\TheRivex1907\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jhanc\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3665,7 +3663,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

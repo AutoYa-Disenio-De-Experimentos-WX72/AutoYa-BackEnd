@@ -11,16 +11,30 @@ namespace AutoYa_Backend.Security.Controllers;
 [Authorize]
 [ApiController]
 [Route("/api/v1/[controller]")]
+
+/// <summary>
+/// Controlador de usuarios.
+/// </summary>
 public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;
     private readonly IMapper _mapper;
+    
+    /// <summary>
+    /// Constructor que inicializa el servicio de usuario y el mapeador.
+    /// </summary>
+    /// <param name="userService">El servicio de usuario.</param>
+    /// <param name="mapper">El mapeador.</param>
     public UsersController(IUserService userService, IMapper mapper)
     {
         _userService = userService;
         _mapper = mapper;
     }
     
+    /// <summary>
+    /// Autentica un usuario.
+    /// </summary>
+    /// <param name="request">La solicitud de autenticación.</param>
     [AllowAnonymous]
     [HttpPost("sign-in")]
     public async Task<IActionResult> Authenticate(AuthenticateRequest request)
@@ -29,6 +43,10 @@ public class UsersController : ControllerBase
         return Ok(response);
     }
 
+    /// <summary>
+    /// Registra un nuevo usuario.
+    /// </summary>
+    /// <param name="request">La solicitud de registro.</param>
     [AllowAnonymous]
     [HttpPost("sign-up")]
     public async Task<IActionResult> Register(RegisterRequest request)
@@ -37,6 +55,9 @@ public class UsersController : ControllerBase
         return Ok(new { message = "Registration successful" });
     }
     
+    /// <summary>
+    /// Obtiene todos los usuarios.
+    /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -45,6 +66,10 @@ public class UsersController : ControllerBase
         return Ok(resources);
     }
 
+    /// <summary>
+    /// Obtiene un usuario por su ID.
+    /// </summary>
+    /// <param name="id">El ID del usuario.</param>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -53,6 +78,11 @@ public class UsersController : ControllerBase
         return Ok(resource);
     }
     
+    /// <summary>
+    /// Actualiza un usuario.
+    /// </summary>
+    /// <param name="id">El ID del usuario.</param>
+    /// <param name="request">La solicitud de actualización.</param>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, UpdateRequest request)
     {
@@ -60,6 +90,10 @@ public class UsersController : ControllerBase
         return Ok(new { message = "User updated successfully" });
     }
 
+    /// <summary>
+    /// Elimina un usuario.
+    /// </summary>
+    /// <param name="id">El ID del usuario.</param>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

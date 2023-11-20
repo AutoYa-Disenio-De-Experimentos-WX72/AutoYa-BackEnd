@@ -4,15 +4,26 @@ using AutoYa_Backend.Security.Exceptions;
 
 namespace AutoYa_Backend.Security.Authorization.Middleware;
 
+/// <summary>
+/// Clase que maneja los errores en el middleware.
+/// </summary>
 public class ErrorHandlerMiddleware
 {
     private readonly RequestDelegate _next;
 
+    /// <summary>
+    /// Constructor que inicializa el siguiente delegado de solicitud.
+    /// </summary>
+    /// <param name="next">El siguiente delegado de solicitud.</param>
     public ErrorHandlerMiddleware(RequestDelegate next)
     {
         _next = next;
     }
     
+    /// <summary>
+    /// Método que se invoca para procesar la solicitud HTTP.
+    /// </summary>
+    /// <param name="context">El contexto HTTP.</param>
     public async Task Invoke(HttpContext context)
     {
         try
@@ -26,15 +37,15 @@ public class ErrorHandlerMiddleware
             switch(error)
             {
                 case AppException e:
-                    // custom application error
+                    // Error de aplicación personalizado
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
                     break;
                 case KeyNotFoundException e:
-                    // not found error
+                    // Error de no encontrado
                     response.StatusCode = (int)HttpStatusCode.NotFound;
                     break;
                 default:
-                    // unhandled error
+                    // Error no manejado
                     response.StatusCode = 
                         (int)HttpStatusCode.InternalServerError;
                     break;
