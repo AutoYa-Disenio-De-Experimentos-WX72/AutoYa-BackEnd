@@ -6,6 +6,9 @@ using AutoYa_Backend.Shared.Persistence.Repositories;
 
 namespace AutoYa_Backend.AutoYa.Services;
 
+/// <summary>
+/// Servicio que ofrece métodos para la gestión de vehículos.
+/// </summary>
 public class VehiculoService : IVehiculoService
 {
     private readonly IVehiculoRepository _vehiculoRepository;
@@ -14,6 +17,15 @@ public class VehiculoService : IVehiculoService
     private readonly IAlquilerRepository _alquilerRepository;
     private readonly IUnitOfWork _unitOfWork;
 
+    /// <summary>
+    /// Constructor que inicializa una nueva instancia del servicio de vehículos.
+    /// </summary>
+    /// <param name="vehiculoRepository">Repositorio para realizar operaciones de vehículos.</param>
+    /// <param name="propietarioRepository">Repositorio para operaciones de propietarios.</param>
+    /// <param name="arrendatarioRepository">Repositorio para operaciones de arrendatarios.</param>
+    /// <param name="alquilerRepository">Repositorio para operaciones de alquileres.</param>
+    /// <param name="unitOfWork">Unidad de trabajo para la ejecución de operaciones transaccionales.</param>
+    
     public VehiculoService(IVehiculoRepository vehiculoRepository, IPropietarioRepository propietarioRepository, IUnitOfWork unitOfWork, IAlquilerRepository alquilerRepository, IArrendatarioRepository arrendatarioRepository)
     {
         _vehiculoRepository = vehiculoRepository;
@@ -23,21 +35,44 @@ public class VehiculoService : IVehiculoService
         _unitOfWork = unitOfWork;
     }
 
+    /// <summary>
+    /// Obtiene una lista de todos los vehículos de manera asincrónica.
+    /// </summary>
+    /// <returns>Una lista de vehículos.</returns>
+    
     public async Task<IEnumerable<Vehiculo>> ListAsync()
     {
         return await _vehiculoRepository.ListAsync();
     }
 
+    /// <summary>
+    /// Guarda un vehículo en la base de datos de forma asincrónica.
+    /// </summary>
+    /// <param name="vehiculo">Datos del vehículo a guardar.</param>
+    /// <returns>Una respuesta con el resultado de la operación de guardado.</returns>
+    
     public async Task<IEnumerable<Vehiculo>> ListByPropietarioIdAsync(int propietarioId)
     {
         return await _vehiculoRepository.FindByPropietarioIdAsync(propietarioId);
     }
 
+    /// <summary>
+    /// Actualiza un vehículo existente en la base de datos de forma asincrónica.
+    /// </summary>
+    /// <param name="vehiculoId">Identificador del vehículo a actualizar.</param>
+    /// <param name="vehiculo">Datos actualizados del vehículo.</param>
+    /// <returns>Una respuesta con el resultado de la operación de actualización.</returns>
+    
     public async Task<IEnumerable<Vehiculo>> ListByArrendatarioIdAsync(int arrendatarioId)
     {
         return await _vehiculoRepository.FindByArrendatarioIdAsync(arrendatarioId);
     }
 
+     /// <summary>
+    /// Elimina un vehículo de la base de datos de forma asincrónica.
+    /// </summary>
+    /// <param name="vehiculoId">Identificador del vehículo a eliminar.</param>
+    /// <returns>Una respuesta con el resultado de la operación de eliminación.</returns>
     public async Task<IEnumerable<Vehiculo>> ListByAlquilerIdAsync(int alquilerId)
     {
         return await _vehiculoRepository.FindByAlquilerIdAsync(alquilerId);
