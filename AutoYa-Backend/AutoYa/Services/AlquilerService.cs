@@ -6,6 +6,9 @@ using AutoYa_Backend.Shared.Persistence.Repositories;
 
 namespace AutoYa_Backend.AutoYa.Services;
 
+/// <summary>
+/// Servicio que ofrece métodos para gestionar las operaciones CRUD de alquileres.
+/// </summary>
 public class AlquilerService : IAlquilerService
 {
     private readonly IAlquilerRepository _alquilerRepository;
@@ -14,6 +17,18 @@ public class AlquilerService : IAlquilerService
     private readonly IArrendatarioRepository _arrendatarioRepository;
     private readonly ISolicitudRepository _solicitudRepository;
     private readonly IUnitOfWork _unitOfWork;
+    
+    // Declaraciones de los repositorios y unidad de trabajo (UnitOfWork)
+
+    /// <summary>
+    /// Inicializa una nueva instancia del servicio de alquileres, inyectando las dependencias necesarias.
+    /// </summary>
+    /// <param name="alquilerRepository">Repositorio para operaciones de alquiler.</param>
+    /// <param name="vehiculoRepository">Repositorio para operaciones de vehículo.</param>
+    /// <param name="propietarioRepository">Repositorio para operaciones de propietario.</param>
+    /// <param name="arrendatarioRepository">Repositorio para operaciones de arrendatario.</param>
+    /// <param name="solicitudRepository">Repositorio para operaciones de solicitud.</param>
+    /// <param name="unitOfWork">Unidad de trabajo para operaciones que involucran múltiples repositorios.</param>
     
     public AlquilerService(IAlquilerRepository alquilerRepository, IVehiculoRepository vehiculoRepository, IPropietarioRepository propietarioRepository, IArrendatarioRepository arrendatarioRepository, ISolicitudRepository solicitudRepository, IUnitOfWork unitOfWork)
         {
@@ -25,6 +40,10 @@ public class AlquilerService : IAlquilerService
             _unitOfWork = unitOfWork;
         }
 
+        /// <summary>
+        /// Obtiene una lista asincrónica de todos los alquileres.
+        /// </summary>
+        /// <returns>Una lista de instancias de Alquiler.</returns>
         public async Task<IEnumerable<Alquiler>> ListAsync()
         {
             return await _alquilerRepository.ListAsync();
@@ -45,6 +64,11 @@ public class AlquilerService : IAlquilerService
             return await _alquilerRepository.FindByArrendatarioIdAsync(arrendatarioId);
         }
 
+        /// <summary>
+        /// Guarda un alquiler de manera asincrónica en la base de datos.
+        /// </summary>
+        /// <param name="alquiler">Datos del alquiler a guardar.</param>
+        /// <returns>Respuesta de la operación con el alquiler guardado o un error.</returns>
         public async Task<AlquilerResponse> SaveAsync(Alquiler alquiler)
         {
             try
@@ -73,6 +97,12 @@ public class AlquilerService : IAlquilerService
             }
         }
 
+        /// <summary>
+        /// Actualiza un alquiler existente de manera asincrónica en la base de datos.
+        /// </summary>
+        /// <param name="alquilerId">Identificador del alquiler a actualizar.</param>
+        /// <param name="alquiler">Datos del alquiler con las actualizaciones.</param>
+        /// <returns>Respuesta de la operación con el alquiler actualizado o un error.</returns>
         public async Task<AlquilerResponse> UpdateAsync(int alquilerId, Alquiler alquiler)
         {
             var existingAlquiler = await _alquilerRepository.FindByIdAsync(alquilerId);
@@ -101,6 +131,11 @@ public class AlquilerService : IAlquilerService
             }
         }
 
+        /// <summary>
+        /// Elimina un alquiler de manera asincrónica de la base de datos.
+        /// </summary>
+        /// <param name="alquilerId">Identificador del alquiler a eliminar.</param>
+        /// <returns>Respuesta de la operación con el alquiler eliminado o un error.</returns>
         public async Task<AlquilerResponse> DeleteAsync(int alquilerId)
         {
             var existingAlquiler = await _alquilerRepository.FindByIdAsync(alquilerId);
