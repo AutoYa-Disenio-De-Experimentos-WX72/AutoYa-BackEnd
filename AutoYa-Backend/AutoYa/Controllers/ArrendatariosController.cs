@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AutoYa_Backend.AutoYa.Controllers;
 
+/// <summary>
+/// Controlador para gestionar operaciones CRUD en arrendatarios.
+/// </summary>
 [ApiController]
 [Route("/api/v1/[controller]")]
 public class ArrendatariosController : ControllerBase
@@ -14,12 +17,21 @@ public class ArrendatariosController : ControllerBase
     private readonly IArrendatarioService _arrendatarioService;
     private readonly IMapper _mapper;
 
+    /// <summary>
+    /// Constructor de la clase ArrendatariosController.
+    /// </summary>
+    /// <param name="arrendatarioService">Servicio de arrendatarios.</param>
+    /// <param name="mapper">Instancia de AutoMapper.</param>
     public ArrendatariosController(IArrendatarioService arrendatarioService, IMapper mapper)
     {
         _arrendatarioService = arrendatarioService;
         _mapper = mapper;
     }
     
+    /// <summary>
+    /// Obtiene todos los arrendatarios.
+    /// </summary>
+    /// <returns>Una colección de recursos de arrendatarios.</returns>
     [HttpGet]
     public async Task<IEnumerable<ArrendatarioResource>> GetAllAsync()
     {
@@ -29,6 +41,11 @@ public class ArrendatariosController : ControllerBase
         return resources;
     }
 
+    /// <summary>
+    /// Crea un nuevo arrendatario.
+    /// </summary>
+    /// <param name="resource">Datos del arrendatario a crear.</param>
+    /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
     [HttpPost]
     public async Task<IActionResult> PostAsync([FromBody] SaveArrendatarioResource resource)
     {
@@ -53,6 +70,12 @@ public class ArrendatariosController : ControllerBase
         return Ok(arrendatarioResource);
     }
 
+    /// <summary>
+    /// Actualiza un arrendatario existente.
+    /// </summary>
+    /// <param name="id">Identificador del arrendatario a actualizar.</param>
+    /// <param name="resource">Datos actualizados del arrendatario.</param>
+    /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
     [HttpPut("{id}")]
     public async Task<IActionResult> PutAsync(int id, [FromBody] SaveArrendatarioResource resource)
     {
@@ -70,6 +93,11 @@ public class ArrendatariosController : ControllerBase
         return Ok(arrendatarioResource);
     }
 
+    /// <summary>
+    /// Elimina un arrendatario existente.
+    /// </summary>
+    /// <param name="id">Identificador del arrendatario a eliminar.</param>
+    /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAsync(int id)
     {
