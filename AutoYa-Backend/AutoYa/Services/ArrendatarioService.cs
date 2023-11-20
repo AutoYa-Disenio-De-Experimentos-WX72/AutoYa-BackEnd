@@ -6,22 +6,41 @@ using AutoYa_Backend.Shared.Persistence.Repositories;
 
 namespace AutoYa_Backend.AutoYa.Services;
 
+/// <summary>
+/// Servicio que ofrece métodos para gestionar las operaciones CRUD de arrendatarios.
+/// </summary>
 public class ArrendatarioService : IArrendatarioService
 {
     private readonly IArrendatarioRepository _arrendatarioRepository;
         private readonly IUnitOfWork _unitOfWork;
 
+        // Declaraciones de los repositorios y unidad de trabajo (UnitOfWork)
+        
+        /// <summary>
+        /// Inicializa una nueva instancia del servicio de arrendatarios, inyectando las dependencias necesarias.
+        /// </summary>
+        /// <param name="arrendatarioRepository">Repositorio para operaciones de arrendatario.</param>
+        /// <param name="unitOfWork">Unidad de trabajo para operaciones que involucran múltiples repositorios.</param>
         public ArrendatarioService(IArrendatarioRepository arrendatarioRepository, IUnitOfWork unitOfWork)
         {
             _arrendatarioRepository = arrendatarioRepository;
             _unitOfWork = unitOfWork;
         }
 
+        /// <summary>
+        /// Obtiene una lista asincrónica de todos los arrendatarios.
+        /// </summary>
+        /// <returns>Una lista de instancias de Arrendatario.</returns>
         public async Task<IEnumerable<Arrendatario>> ListAsync()
         {
             return await _arrendatarioRepository.ListAsync();
         }
 
+        /// <summary>
+        /// Guarda un arrendatario de manera asincrónica en la base de datos.
+        /// </summary>
+        /// <param name="arrendatario">Datos del arrendatario a guardar.</param>
+        /// <returns>Respuesta de la operación con el arrendatario guardado o un error.</returns>
         public async Task<ArrendatarioResponse> SaveAsync(Arrendatario arrendatario)
         {
             try
@@ -43,6 +62,12 @@ public class ArrendatarioService : IArrendatarioService
             }
         }
 
+        /// <summary>
+        /// Actualiza un arrendatario existente de manera asincrónica en la base de datos.
+        /// </summary>
+        /// <param name="id">Identificador del arrendatario a actualizar.</param>
+        /// <param name="arrendatario">Datos del arrendatario con las actualizaciones.</param>
+        /// <returns>Respuesta de la operación con el arrendatario actualizado o un error.</returns>
         public async Task<ArrendatarioResponse> UpdateAsync(int id, Arrendatario arrendatario)
         {
             // Buscar el arrendatario existente por ID
@@ -77,6 +102,12 @@ public class ArrendatarioService : IArrendatarioService
             }
         }
 
+
+        /// <summary>
+        /// Elimina un arrendatario de manera asincrónica de la base de datos.
+        /// </summary>
+        /// <param name="id">Identificador del arrendatario a eliminar.</param>
+        /// <returns>Respuesta de la operación con el arrendatario eliminado o un error.</returns>
         public async Task<ArrendatarioResponse> DeleteAsync(int id)
         {
             var existingArrendatario = await _arrendatarioRepository.FindByIdAsync(id);
