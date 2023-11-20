@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AUTOYA\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {}
+    "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {}
   },
   "projects": {
-    "D:\\AUTOYA\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {
+    "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AUTOYA\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "projectUniqueName": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
         "projectName": "AutoYa-Backend",
-        "projectPath": "D:\\AUTOYA\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
-        "packagesPath": "C:\\Users\\jhanc\\.nuget\\packages\\",
-        "outputPath": "D:\\AUTOYA\\AutoYa-Backend\\AutoYa-Backend\\obj\\",
+        "projectPath": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "D:\\Ingeniería de Software\\Ciclo 7\\Aplicaciones Web\\Trabajo Final AutoYa\\TF\\AutoYa-Backend\\AutoYa-Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jhanc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -102,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
