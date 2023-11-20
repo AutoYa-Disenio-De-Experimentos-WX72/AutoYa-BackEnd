@@ -11,6 +11,9 @@ using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace AutoYa_Backend.Security.Services;
 
+/// <summary>
+/// Clase que representa un servicio de usuarios.
+/// </summary>
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
@@ -19,6 +22,13 @@ public class UserService : IUserService
     private readonly IJwtHandler _jwtHandler;
     private readonly IMapper _mapper;
 
+    /// <summary>
+    /// Constructor que inicializa el repositorio de usuarios, la unidad de trabajo, el mapeador y el manejador de JWT.
+    /// </summary>
+    /// <param name="userRepository">El repositorio de usuarios.</param>
+    /// <param name="unitOfWork">La unidad de trabajo.</param>
+    /// <param name="mapper">El mapeador.</param>
+    /// <param name="jwtHandler">El manejador de JWT.</param>
     public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IMapper mapper, IJwtHandler jwtHandler)
     {
         _userRepository = userRepository;
@@ -26,7 +36,11 @@ public class UserService : IUserService
         _mapper = mapper;
         _jwtHandler = jwtHandler;
     }
-
+    
+    /// <summary>
+    /// Autentica un usuario.
+    /// </summary>
+    /// <param name="request">La solicitud de autenticación.</param>
     public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest request)
     {
         var user = await _userRepository.FindByEmailAsync(request.Email);
@@ -49,11 +63,19 @@ public class UserService : IUserService
         return response;
     }
 
+    
+    /// <summary>
+    /// Obtiene una lista de todos los usuarios de forma asíncrona.
+    /// </summary>
     public async Task<IEnumerable<User>> ListAsync()
     {
         return await _userRepository.ListAsync();
     }
 
+    /// <summary>
+    /// Obtiene un usuario por su ID de forma asíncrona.
+    /// </summary>
+    /// <param name="id">El ID del usuario.</param>
     public async Task<User> GetByIdAsync(int id)
     {
         var user = await _userRepository.FindByIdAsync(id);
@@ -61,6 +83,10 @@ public class UserService : IUserService
         return user;
     }
 
+    /// <summary>
+    /// Registra un nuevo usuario de forma asíncrona.
+    /// </summary>
+    /// <param name="request">La solicitud de registro.</param>
     public async Task RegisterAsync(RegisterRequest request)
     {
         //Validate
@@ -85,6 +111,11 @@ public class UserService : IUserService
         }
     }
 
+    /// <summary>
+    /// Actualiza un usuario de forma asíncrona.
+    /// </summary>
+    /// <param name="id">El ID del usuario.</param>
+    /// <param name="request">La solicitud de actualización.</param>
     public async Task UpdateAsync(int id, UpdateRequest request)
     {
         var user = GetById(id);
@@ -110,6 +141,10 @@ public class UserService : IUserService
         }
     }
 
+    /// <summary>
+    /// Elimina un usuario de forma asíncrona.
+    /// </summary>
+    /// <param name="id">El ID del usuario.</param>
     public async Task DeleteAsync(int id)
     {
         var user = GetById(id);
@@ -126,7 +161,7 @@ public class UserService : IUserService
 
     }
     
-    //helper methods
+    // Métodos auxiliares
     private User GetById(int id)
     {
         var user = _userRepository.FindById(id);

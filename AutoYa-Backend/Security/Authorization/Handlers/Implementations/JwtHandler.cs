@@ -9,18 +9,28 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace AutoYa_Backend.Security.Authorization.Handlers.Implementations;
 
+/// <summary>
+/// Clase que maneja la generación y validación de tokens JWT.
+/// </summary>
 public class JwtHandler : IJwtHandler
 {
     private readonly AppSettings _appSettings;
-
+    /// <summary>
+    /// Constructor que inicializa las configuraciones de la aplicación.
+    /// </summary>
+    /// <param name="appSettings">Configuraciones de la aplicación.</param>
     public JwtHandler(IOptions<AppSettings> appSettings)
     {
         _appSettings = appSettings.Value;
     }
-
+    /// <summary>
+    /// Genera un token para un usuario.
+    /// </summary>
+    /// <param name="user">El usuario para el que se generará el token.</param>
+    /// <returns>El token generado.</returns>
     public string GenerateToken(User user)
     {
-        // Generate Token for a valid period of 7 days
+        // Genera un token válido por un período de 7 días
         var tokenHandler = new JwtSecurityTokenHandler();
         Console.WriteLine($"token handler: {tokenHandler.TokenType}");
         var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
@@ -41,6 +51,11 @@ public class JwtHandler : IJwtHandler
         return tokenHandler.WriteToken(token);
     }
 
+    /// <summary>
+    /// Valida un token.
+    /// </summary>
+    /// <param name="token">El token a validar.</param>
+    /// <returns>El ID del usuario si el token es válido, null en caso contrario.</returns>
     public int? ValidateToken(string token)
     {
         if (token == null)
@@ -48,7 +63,7 @@ public class JwtHandler : IJwtHandler
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
         
-        // Execute Token validation
+        // Ejecuta la validación del token
         try
         {
             tokenHandler.ValidateToken(token, new TokenValidationParameters
