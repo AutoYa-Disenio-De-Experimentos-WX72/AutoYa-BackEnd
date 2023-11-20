@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AutoYa_Backend.AutoYa.Controllers;
 
+/// <summary>
+/// Controlador para gestionar operaciones CRUD en notificaciones.
+/// </summary>
 [ApiController]
     [Route("/api/v1/[controller]")]
     public class NotificacionesController : ControllerBase
@@ -14,12 +17,21 @@ namespace AutoYa_Backend.AutoYa.Controllers;
         private readonly INotificacionService _notificacionService;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// Constructor de la clase NotificacionesController.
+        /// </summary>
+        /// <param name="notificacionService">Servicio de notificaciones.</param>
+        /// <param name="mapper">Instancia de AutoMapper.</param>
         public NotificacionesController(INotificacionService notificacionService, IMapper mapper)
         {
             _notificacionService = notificacionService;
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Obtiene todas las notificaciones.
+        /// </summary>
+        /// <returns>Una colección de recursos de notificaciones.</returns>
         [HttpGet]
         public async Task<IEnumerable<NotificacionResource>> GetAllAsync()
         {
@@ -29,6 +41,11 @@ namespace AutoYa_Backend.AutoYa.Controllers;
             return resources;
         }
 
+        /// <summary>
+        /// Crea una nueva notificación.
+        /// </summary>
+        /// <param name="resource">Datos de la notificación a crear.</param>
+        /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveNotificacionResource resource)
         {
@@ -47,6 +64,12 @@ namespace AutoYa_Backend.AutoYa.Controllers;
             return Ok(notificacionResource);
         }
 
+        /// <summary>
+        /// Actualiza una notificación existente.
+        /// </summary>
+        /// <param name="id">Identificador de la notificación a actualizar.</param>
+        /// <param name="resource">Datos actualizados de la notificación.</param>
+        /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveNotificacionResource resource)
         {
@@ -65,6 +88,11 @@ namespace AutoYa_Backend.AutoYa.Controllers;
             return Ok(notificacionResource);
         }
 
+        /// <summary>
+        /// Elimina una notificación existente.
+        /// </summary>
+        /// <param name="id">Identificador de la notificación a eliminar.</param>
+        /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {

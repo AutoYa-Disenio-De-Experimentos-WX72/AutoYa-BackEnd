@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AutoYa_Backend.AutoYa.Controllers;
 
+/// <summary>
+/// Controlador para gestionar operaciones CRUD en mantenimientos.
+/// </summary>
 [ApiController]
     [Route("/api/v1/[controller]")]
     public class MantenimientosController : ControllerBase
@@ -14,12 +17,21 @@ namespace AutoYa_Backend.AutoYa.Controllers;
         private readonly IMantenimientoService _mantenimientoService;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// Constructor de la clase MantenimientosController.
+        /// </summary>
+        /// <param name="mantenimientoService">Servicio de mantenimientos.</param>
+        /// <param name="mapper">Instancia de AutoMapper.</param>
         public MantenimientosController(IMantenimientoService mantenimientoService, IMapper mapper)
         {
             _mantenimientoService = mantenimientoService;
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Obtiene todos los mantenimientos.
+        /// </summary>
+        /// <returns>Una colección de recursos de mantenimientos.</returns>
         [HttpGet]
         public async Task<IEnumerable<MantenimientoResource>> GetAllAsync()
         {
@@ -29,6 +41,11 @@ namespace AutoYa_Backend.AutoYa.Controllers;
             return resources;
         }
 
+        /// <summary>
+        /// Crea un nuevo mantenimiento.
+        /// </summary>
+        /// <param name="resource">Datos del mantenimiento a crear.</param>
+        /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveMantenimientoResource resource)
         {
@@ -47,6 +64,12 @@ namespace AutoYa_Backend.AutoYa.Controllers;
             return Ok(mantenimientoResource);
         }
 
+        /// <summary>
+        /// Actualiza un mantenimiento existente.
+        /// </summary>
+        /// <param name="id">Identificador del mantenimiento a actualizar.</param>
+        /// <param name="resource">Datos actualizados del mantenimiento.</param>
+        /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(int id, [FromBody] SaveMantenimientoResource resource)
         {
@@ -65,6 +88,11 @@ namespace AutoYa_Backend.AutoYa.Controllers;
             return Ok(mantenimientoResource);
         }
 
+        /// <summary>
+        /// Elimina un mantenimiento existente.
+        /// </summary>
+        /// <param name="id">Identificador del mantenimiento a eliminar.</param>
+        /// <returns>Una acción HTTP que indica el resultado de la operación.</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
