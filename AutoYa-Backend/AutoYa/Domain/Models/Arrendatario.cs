@@ -23,7 +23,7 @@ public class Arrendatario
     /// <summary>
     /// Obtiene o establece la fecha de nacimiento del arrendatario.
     /// </summary>
-    public DateTime FechaNacimiento { get; set; }
+    public string FechaNacimiento { get; set; }
 
     /// <summary>
     /// Obtiene o establece el número de teléfono del arrendatario.

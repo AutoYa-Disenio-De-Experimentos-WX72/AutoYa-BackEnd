@@ -15,12 +15,12 @@ public class SaveAlquilerResource
     /// <summary>
     /// Fecha y hora de inicio del periodo de alquiler.
     /// </summary>
-    public DateTime Fecha_inicio { get; set; }
+    public string Fecha_inicio { get; set; }
 
     /// <summary>
     /// Fecha y hora de fin del periodo de alquiler.
     /// </summary>
-    public DateTime Fecha_fin { get; set; }
+    public string Fecha_fin { get; set; }
 
     /// <summary>
     /// Costo total asociado al alquiler.

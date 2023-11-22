@@ -25,7 +25,7 @@ public class PropietarioResource
     /// <summary>
     /// Fecha de nacimiento del propietario.
     /// </summary>
-    public DateTime FechaNacimiento { get; set; }
+    public string FechaNacimiento { get; set; }
 
     /// <summary>
     /// Número de teléfono del propietario.

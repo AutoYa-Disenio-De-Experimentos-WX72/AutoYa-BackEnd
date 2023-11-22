@@ -23,7 +23,7 @@
         /// <summary>
         /// Obtiene o establece la fecha de nacimiento del propietario.
         /// </summary>
-        public DateTime FechaNacimiento { get; set; }
+        public string FechaNacimiento { get; set; }
 
         /// <summary>
         /// Obtiene o establece el número de teléfono del propietario.
