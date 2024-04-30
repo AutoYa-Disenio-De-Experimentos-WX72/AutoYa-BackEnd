@@ -10,7 +10,7 @@ namespace AutoYa_Backend.AutoYa.Persistence.Repositories;
 /// Repositorio para manejar las operaciones CRUD para los vehículos.
 /// </summary>
 
-public class VehiculoReposiroty : BaseRepository, IVehiculoRepository
+public class VehiculoRepository : BaseRepository, IVehiculoRepository
 {
 
     /// <summary>
@@ -18,7 +18,7 @@ public class VehiculoReposiroty : BaseRepository, IVehiculoRepository
     /// </summary>
     /// <param name="context">Contexto de la base de datos utilizado para las operaciones de repositorio.</param>
     
-    public VehiculoReposiroty(AppDbContext context) : base(context)
+    public VehiculoRepository(AppDbContext context) : base(context)
     {
     }
 

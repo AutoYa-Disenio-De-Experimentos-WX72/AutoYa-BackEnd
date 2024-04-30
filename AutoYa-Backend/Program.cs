@@ -102,7 +102,7 @@ builder.Services.AddScoped<IPropietarioRepository, PropietarioRepository>();
 builder.Services.AddScoped<IPropietarioService, PropietarioService>();
 builder.Services.AddScoped<ISolicitudRepository, SolicitudRepository>();
 builder.Services.AddScoped<ISolicitudService, SolicitudService>();
-builder.Services.AddScoped<IVehiculoRepository, VehiculoReposiroty>();
+builder.Services.AddScoped<IVehiculoRepository, VehiculoRepository>();
 builder.Services.AddScoped<IVehiculoService, VehiculoService>();
 
 // Security Injection Configuration

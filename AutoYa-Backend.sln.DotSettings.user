@@ -1,0 +1,14 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1b315fdd_002D0c9a_002D40fc_002Dbaa3_002D311a928c9812/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from AlquilerServiceTest.cs #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;ProjectFile&gt;115C7A23-83EC-4DFD-A238-BD7734583A6E/d:RepositoryTest/f:AlquilerServiceTest.cs&lt;/ProjectFile&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bf6fecd7_002D5967_002D4af8_002D9293_002D82d4a09dc74d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from AlquilerServiceTest.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;ProjectFile&gt;115C7A23-83EC-4DFD-A238-BD7734583A6E/d:RepositoryTest/f:VehiculoRepositoryTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;115C7A23-83EC-4DFD-A238-BD7734583A6E/d:RepositoryTest/f:PropietarioRepositoryTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;115C7A23-83EC-4DFD-A238-BD7734583A6E/d:RepositoryTest/f:ArrendatarioRepositoryTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;115C7A23-83EC-4DFD-A238-BD7734583A6E/d:RepositoryTest/f:AlquilerRepositoryTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;FD303A72-A6C8-4503-8766-5A73154BC997/d:ControllersTest/f:AlquileresControllerTest.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;FD303A72-A6C8-4503-8766-5A73154BC997/d:ControllersTest/f:VehiculosControllerTest.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

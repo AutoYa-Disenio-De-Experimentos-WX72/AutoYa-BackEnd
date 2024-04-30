@@ -14,25 +14,29 @@ public class AppDbContext : DbContext
     /// Constructor que inicializa una nueva instancia de la clase AppDbContext.
     /// </summary>
     /// <param name="options">Opciones para configurar el contexto de la base de datos.</param>
+    /// 
     public AppDbContext(DbContextOptions options) : base(options)
+    {
+    }
+    public AppDbContext() : base()
     {
     }
 
     /// <summary>
     /// Obtiene o establece el conjunto de datos de alquileres.
     /// </summary>
-    public DbSet<Alquiler> Alquileres { get; set; }
+    public virtual DbSet<Alquiler> Alquileres { get; set; }
     
     /// <summary>
     /// Obtiene o establece el conjunto de datos de arrendatarios.
     /// </summary>
-    public DbSet<Arrendatario> Arrendatarios { get; set; }
+    public virtual DbSet<Arrendatario> Arrendatarios { get; set; }
     public DbSet<Mantenimiento> Mantenimientos { get; set; }
     
     public DbSet<Notificacion> Notificaciones { get; set; }
-    public DbSet<Propietario> Propietarios { get; set; }
+    public virtual DbSet<Propietario> Propietarios { get; set; }
     public DbSet<Solicitud> Solicitudes { get; set; }
-    public DbSet<Vehiculo> Vehiculos { get; set; }
+    public virtual DbSet<Vehiculo> Vehiculos { get; set; }
     
     /// <summary>
     /// Configuración del modelo de base de datos al crear el contexto.

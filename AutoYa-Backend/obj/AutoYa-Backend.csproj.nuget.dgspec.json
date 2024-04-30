@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "A:\\TheRivex1907\\Documents\\Universidad\\Septimo Ciclo\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-Project\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj": {}
+    "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj": {}
   },
   "projects": {
-    "A:\\TheRivex1907\\Documents\\Universidad\\Septimo Ciclo\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-Project\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj": {
+    "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\TheRivex1907\\Documents\\Universidad\\Septimo Ciclo\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-Project\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "projectUniqueName": "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj",
         "projectName": "AutoYa-Backend",
-        "projectPath": "A:\\TheRivex1907\\Documents\\Universidad\\Septimo Ciclo\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-Project\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj",
-        "packagesPath": "C:\\Users\\TheRivex1907\\.nuget\\packages\\",
-        "outputPath": "A:\\TheRivex1907\\Documents\\Universidad\\Septimo Ciclo\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-Project\\AutoYa-BackEnd\\AutoYa-Backend\\obj\\",
+        "projectPath": "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "packagesPath": "C:\\Users\\JORGE\\.nuget\\packages\\",
+        "outputPath": "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\TheRivex1907\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\JORGE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -77,6 +77,10 @@
               "target": "Package",
               "version": "[2.0.0-preview1-final, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.2, )"
@@ -109,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }

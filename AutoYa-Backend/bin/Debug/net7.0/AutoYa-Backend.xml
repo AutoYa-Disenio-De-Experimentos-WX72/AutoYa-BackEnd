@@ -1724,63 +1724,63 @@
             </summary>
             <returns>Una tarea que representa la operación asincrónica de guardar los cambios en la base de datos.</returns>
         </member>
-        <member name="T:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty">
+        <member name="T:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository">
             <summary>
             Repositorio para manejar las operaciones CRUD para los vehículos.
             </summary>
         </member>
-        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty.#ctor(AutoYa_Backend.Shared.Persistence.Contexts.AppDbContext)">
+        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository.#ctor(AutoYa_Backend.Shared.Persistence.Contexts.AppDbContext)">
             <summary>
             Inicializa una nueva instancia del repositorio VehiculoRepository utilizando el contexto de la aplicación proporcionado.
             </summary>
             <param name="context">Contexto de la base de datos utilizado para las operaciones de repositorio.</param>
         </member>
-        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty.ListAsync">
+        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository.ListAsync">
             <summary>
             Obtiene una lista asincrónica de todos los vehículos, incluyendo sus propietarios, arrendatarios y alquileres asociados.
             </summary>
             <returns>Una tarea que representa la operación asincrónica, que contiene la lista de vehículos.</returns>
         </member>
-        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty.AddAsync(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
+        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository.AddAsync(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
             <summary>
             Agrega un nuevo vehículo de manera asincrónica al contexto de la base de datos.
             </summary>
             <param name="vehiculo">El vehículo a agregar.</param>
         </member>
-        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty.FindByIdAsync(System.Int32)">
+        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository.FindByIdAsync(System.Int32)">
             <summary>
             Busca un vehículo por su identificador de manera asincrónica.
             </summary>
             <param name="vehiculoId">El identificador del vehículo a buscar.</param>
             <returns>Una tarea que representa la operación asincrónica, que contiene el vehículo encontrado o null.</returns>
         </member>
-        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty.Update(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
+        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository.Update(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
             <summary>
             Actualiza los datos de un vehículo existente en el contexto de la base de datos.
             </summary>
             <param name="vehiculo">El vehículo a actualizar.</param>
         </member>
-        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty.Remove(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
+        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository.Remove(AutoYa_Backend.AutoYa.Domain.Models.Vehiculo)">
             <summary>
             Elimina un vehículo del contexto de la base de datos.
             </summary>
             <param name="vehiculo">El vehículo a eliminar.</param>
         </member>
-        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty.FindByPropietarioIdAsync(System.Int32)">
+        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository.FindByPropietarioIdAsync(System.Int32)">
             <summary>
             Encuentra todos los vehículos asociados a un propietario específico de manera asincrónica.
             </summary>
             <param name="propietarioId">El identificador del propietario asociado a los vehículos.</param>
             <returns>Una tarea que representa la operación asincrónica, que contiene una lista de vehículos.</returns>
         </member>
-        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty.FindByArrendatarioIdAsync(System.Int32)">
+        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository.FindByArrendatarioIdAsync(System.Int32)">
             <summary>
             Encuentra todos los vehículos asociados a un arrendatario específico de manera asincrónica.
             </summary>
             <param name="arrendatarioId">El identificador del arrendatario asociado a los vehículos.</param>
             <returns>Una tarea que representa la operación asincrónica, que contiene una lista de vehículos.</returns>
         </member>
-        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoReposiroty.FindByAlquilerIdAsync(System.Int32)">
+        <member name="M:AutoYa_Backend.AutoYa.Persistence.Repositories.VehiculoRepository.FindByAlquilerIdAsync(System.Int32)">
             <summary>
             Encuentra todos los vehículos asociados a un alquiler específico de manera asincrónica.
             </summary>
@@ -3320,6 +3320,7 @@
             Constructor que inicializa una nueva instancia de la clase AppDbContext.
             </summary>
             <param name="options">Opciones para configurar el contexto de la base de datos.</param>
+            
         </member>
         <member name="P:AutoYa_Backend.Shared.Persistence.Contexts.AppDbContext.Alquileres">
             <summary>

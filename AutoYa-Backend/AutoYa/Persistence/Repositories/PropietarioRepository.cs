@@ -70,6 +70,11 @@ public class PropietarioRepository : BaseRepository, IPropietarioRepository
     
     public void Remove(Propietario propietario)
     {
+        if (propietario == null)
+        {
+            throw new ArgumentNullException(nameof(propietario));
+        }
+
         _context.Propietarios.Remove(propietario);
     }
 
