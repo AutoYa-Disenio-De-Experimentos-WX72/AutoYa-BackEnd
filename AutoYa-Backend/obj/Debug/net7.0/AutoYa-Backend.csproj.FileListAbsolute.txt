@@ -241,3 +241,5 @@ A:\TheRivex1907\Documents\Universidad\Septimo Ciclo\Diseño de Experimentos en I
 A:\TheRivex1907\Documents\Universidad\Septimo Ciclo\Diseño de Experimentos en Ingenieria de Software\AutoYa-Project\AutoYa-BackEnd\AutoYa-Backend\obj\Debug\net7.0\AutoYa-Backend.pdb
 A:\TheRivex1907\Documents\Universidad\Septimo Ciclo\Diseño de Experimentos en Ingenieria de Software\AutoYa-Project\AutoYa-BackEnd\AutoYa-Backend\obj\Debug\net7.0\AutoYa-Backend.genruntimeconfig.cache
 A:\TheRivex1907\Documents\Universidad\Septimo Ciclo\Diseño de Experimentos en Ingenieria de Software\AutoYa-Project\AutoYa-BackEnd\AutoYa-Backend\obj\Debug\net7.0\ref\AutoYa-Backend.dll
+A:\TheRivex1907\Documents\Universidad\Septimo Ciclo\Diseño de Experimentos en Ingenieria de Software\AutoYa-Project\AutoYa-BackEnd\AutoYa-Backend\bin\Debug\net7.0\Npgsql.dll
+A:\TheRivex1907\Documents\Universidad\Septimo Ciclo\Diseño de Experimentos en Ingenieria de Software\AutoYa-Project\AutoYa-BackEnd\AutoYa-Backend\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

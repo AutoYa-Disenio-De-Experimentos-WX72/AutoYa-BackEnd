@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aulIlMw5e6G1wDi6DjfaUO0++eXRXUHyYG/abpIkUivHQlqg/SUCZO7B6yeRe2OCzmYyEXNvGOKI+m6k+u5QYw==",
+  "dgSpecHash": "tOt+JBfFuTktXEPLWqH+2qRXEcaMuWmZIEJ8ixdzghNdKoZAWYSv5YsJY2FQ99DzSJuEf+1Vv97YtZa/Rmy7NQ==",
   "success": true,
   "projectFilePath": "A:\\TheRivex1907\\Documents\\Universidad\\Septimo Ciclo\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-Project\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,8 @@
     "C:\\Users\\TheRivex1907\\.nuget\\packages\\mysql.data\\8.0.33\\mysql.data.8.0.33.nupkg.sha512",
     "C:\\Users\\TheRivex1907\\.nuget\\packages\\mysql.entityframeworkcore\\7.0.2\\mysql.entityframeworkcore.7.0.2.nupkg.sha512",
     "C:\\Users\\TheRivex1907\\.nuget\\packages\\netstandard.library\\2.0.0-preview1-25301-01\\netstandard.library.2.0.0-preview1-25301-01.nupkg.sha512",
+    "C:\\Users\\TheRivex1907\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\TheRivex1907\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
     "C:\\Users\\TheRivex1907\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\TheRivex1907\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\TheRivex1907\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
