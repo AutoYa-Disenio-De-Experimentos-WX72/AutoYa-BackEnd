@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GithubProjects\\AutoYa-BackEnd\\CoreIntegrationTest\\CoreIntegrationTest.csproj": {}
+    "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\CoreIntegrationTest\\CoreIntegrationTest.csproj": {}
   },
   "projects": {
-    "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj": {
+    "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "projectUniqueName": "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj",
         "projectName": "AutoYa-Backend",
-        "projectPath": "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj",
-        "packagesPath": "C:\\Users\\JORGE\\.nuget\\packages\\",
-        "outputPath": "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\obj\\",
+        "projectPath": "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\AutoYa-Backend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\JORGE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,11 +39,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -117,17 +117,21 @@
         }
       }
     },
-    "C:\\GithubProjects\\AutoYa-BackEnd\\CoreIntegrationTest\\CoreIntegrationTest.csproj": {
+    "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\CoreIntegrationTest\\CoreIntegrationTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GithubProjects\\AutoYa-BackEnd\\CoreIntegrationTest\\CoreIntegrationTest.csproj",
+        "projectUniqueName": "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\CoreIntegrationTest\\CoreIntegrationTest.csproj",
         "projectName": "CoreIntegrationTest",
-        "projectPath": "C:\\GithubProjects\\AutoYa-BackEnd\\CoreIntegrationTest\\CoreIntegrationTest.csproj",
-        "packagesPath": "C:\\Users\\JORGE\\.nuget\\packages\\",
-        "outputPath": "C:\\GithubProjects\\AutoYa-BackEnd\\CoreIntegrationTest\\obj\\",
+        "projectPath": "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\CoreIntegrationTest\\CoreIntegrationTest.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\CoreIntegrationTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\JORGE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -135,14 +139,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj": {
-                "projectPath": "C:\\GithubProjects\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj"
+              "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj": {
+                "projectPath": "F:\\TheRivex1907\\Documentos\\Universidad\\Diseño de Experimentos en Ingenieria de Software\\AutoYa-BackEnd\\AutoYa-Backend\\AutoYa-Backend.csproj"
               }
             }
           }
@@ -151,11 +156,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {

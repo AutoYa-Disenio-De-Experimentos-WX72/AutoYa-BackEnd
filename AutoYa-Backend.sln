@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreEntitiesUnitTest", "Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreIntegrationTest", "CoreIntegrationTest\CoreIntegrationTest.csproj", "{FD303A72-A6C8-4503-8766-5A73154BC997}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreBehavior-DrivenDevelopment", "CoreBehavior-DrivenDevelopment\CoreBehavior-DrivenDevelopment.csproj", "{7AAFDC20-3394-4E37-ADC0-BDF1FC77139A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{FD303A72-A6C8-4503-8766-5A73154BC997}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD303A72-A6C8-4503-8766-5A73154BC997}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD303A72-A6C8-4503-8766-5A73154BC997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AAFDC20-3394-4E37-ADC0-BDF1FC77139A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AAFDC20-3394-4E37-ADC0-BDF1FC77139A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AAFDC20-3394-4E37-ADC0-BDF1FC77139A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AAFDC20-3394-4E37-ADC0-BDF1FC77139A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
