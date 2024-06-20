@@ -54,7 +54,7 @@ public class VehiculosController : ControllerBase
 
         var vehiculo = _mapper.Map<SaveVehiculoResource, Vehiculo>(resource);
 
-        vehiculo.EstadoRenta = "AVAILABLE";
+        vehiculo.EstadoRenta = "Disponible";
         vehiculo.ArrendatarioId = null;
         vehiculo.AlquilerId = null;
         

@@ -20,7 +20,7 @@ public class SaveArrendatarioResource
     /// <summary>
     /// Fecha de nacimiento del arrendatario.
     /// </summary>
-    public DateTime FechaNacimiento { get; set; }
+    public string FechaNacimiento { get; set; }
 
     /// <summary>
     /// Número de teléfono del arrendatario.

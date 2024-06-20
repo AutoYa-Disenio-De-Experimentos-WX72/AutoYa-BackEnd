@@ -18,12 +18,12 @@ public class Alquiler
     /// <summary>
     /// Obtiene o establece la fecha de inicio del alquiler.
     /// </summary>
-    public DateTime Fecha_inicio { get; set; }
+    public string Fecha_inicio { get; set; }
 
     /// <summary>
     /// Obtiene o establece la fecha de fin del alquiler.
     /// </summary>
-    public DateTime Fecha_fin { get; set; }
+    public string Fecha_fin { get; set; }
 
     /// <summary>
     /// Obtiene o establece el costo total del alquiler, calculado como el tiempo de alquiler multiplicado por el precio de alquiler por unidad de tiempo.
