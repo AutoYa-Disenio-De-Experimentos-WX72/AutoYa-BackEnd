@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoYa-Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46e47bce9c9dc883c5e3d1c7720f3da053b9e130")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+966da76e5d839a40146b466f0652880d5b00a1dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoYa-Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoYa-Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
